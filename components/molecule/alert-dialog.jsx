@@ -1,56 +1,50 @@
-import * as Dialog from '@radix-ui/react-dialog';
+import * as PrimitiveAlertDialog from '@radix-ui/react-alert-dialog';
 import { X } from '@jengaicons/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Button as NativeButton, IconButton } from '../atoms/button';
 import { cn } from '../utils';
 
-const Header = ({ children, showclose = true }) => {
+export const Header = ({ children }) => {
   return (
-    <div className="border-b border-border-default p-3xl flex flex-row items-center justify-between">
-      <Dialog.Title className="headingLg text-text-strong">
+    <div className="bg-surface-basic-subdued p-3xl flex flex-row items-center justify-between">
+      <PrimitiveAlertDialog.Title className="headingLg text-text-strong">
         {children}
-      </Dialog.Title>
-      {showclose && (
-        <Dialog.Close asChild>
-          <IconButton variant="plain" icon={X} />
-        </Dialog.Close>
-      )}
+      </PrimitiveAlertDialog.Title>
+      <PrimitiveAlertDialog.Cancel asChild>
+        <IconButton variant="plain" icon={X} />
+      </PrimitiveAlertDialog.Cancel>
     </div>
   );
 };
 
-const Content = ({ children }) => {
-  return <div className="p-3xl">{children}</div>;
+export const Content = ({ children }) => {
+  return <div className="p-3xl bodyMd">{children}</div>;
 };
 
-const Footer = ({ children }) => {
+export const Footer = ({ children }) => {
   return (
-    <div className="p-3xl flex flex-row justify-end gap-lg bg-surface-basic-subdued">
-      {children}
-    </div>
+    <div className="p-3xl flex flex-row justify-end gap-lg">{children}</div>
   );
 };
 
-const Button = (props) => {
-  const { closable } = props;
+export const Button = (props) => {
   return (
-    <>
-      {closable && (
-        <Dialog.Close asChild>
-          <NativeButton {...props} />
-        </Dialog.Close>
-      )}
-      {!closable && <NativeButton {...props} />}
-    </>
+    <PrimitiveAlertDialog.Cancel asChild>
+      <NativeButton {...props} />
+    </PrimitiveAlertDialog.Cancel>
   );
 };
 
-const PopupRoot = ({ show, onOpenChange, children, backdrop = true }) => {
+export const DialogRoot = ({
+  show,
+  onOpenChange,
+  children,
+  backdrop = true,
+}) => {
   return (
-    <Dialog.Root
+    <PrimitiveAlertDialog.Root
       open={show}
       onOpenChange={(e) => {
-        console.log(e);
         if (e) {
           onOpenChange(show);
         } else {
@@ -60,8 +54,8 @@ const PopupRoot = ({ show, onOpenChange, children, backdrop = true }) => {
     >
       <AnimatePresence>
         {show && (
-          <Dialog.Portal forceMount>
-            <Dialog.Overlay asChild forceMount>
+          <PrimitiveAlertDialog.Portal forceMount>
+            <PrimitiveAlertDialog.Overlay asChild forceMount>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -71,8 +65,8 @@ const PopupRoot = ({ show, onOpenChange, children, backdrop = true }) => {
                   'bg-text-default/60': backdrop,
                 })}
               />
-            </Dialog.Overlay>
-            <Dialog.Content asChild forceMount>
+            </PrimitiveAlertDialog.Overlay>
+            <PrimitiveAlertDialog.Content asChild forceMount>
               <motion.div
                 initial={{ x: '-50%', y: '-47%', opacity: 0 }}
                 animate={{ x: '-50%', y: '-50%', opacity: 1 }}
@@ -82,20 +76,10 @@ const PopupRoot = ({ show, onOpenChange, children, backdrop = true }) => {
               >
                 {children}
               </motion.div>
-            </Dialog.Content>
-          </Dialog.Portal>
+            </PrimitiveAlertDialog.Content>
+          </PrimitiveAlertDialog.Portal>
         )}
       </AnimatePresence>
-    </Dialog.Root>
+    </PrimitiveAlertDialog.Root>
   );
 };
-
-const Popup = {
-  Root: PopupRoot,
-  Header,
-  Content,
-  Footer,
-  Button,
-};
-
-export default Popup;
