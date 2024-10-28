@@ -1,27 +1,27 @@
-import { ReactNode } from 'react';
-import SelectZener from '@oshq/react-select';
+import { ReactNode } from "react";
+import SelectZener from "@oshq/react-select";
 import type {
   IGroupRender,
   IMenuItemRender,
   ISelect,
-} from '@oshq/react-select';
-import { ChevronUpDown, CircleNotch, X } from '~/components/icons';
-import { cn } from '../utils';
-import AnimateHide from './animate-hide';
+} from "@oshq/react-select";
+import { ChevronUpDown, CircleNotch, X } from "~/components/icons";
+import { cn } from "../utils";
+import AnimateHide from "./animate-hide";
 
 const menuItemRender = (props: IMenuItemRender) => {
   const { innerProps, render, active, focused, disabled } = props;
   return (
     <div
       {...innerProps}
-      className={cn('px-xl py-lg select-none', {
-        'bg-surface-basic-hovered': !!focused && !active && !disabled,
-        'bg-surface-basic-active': !!active,
-        'text-text-default': !disabled,
-        'text-text-disabled': !!disabled,
+      className={cn("px-xl py-lg select-none", {
+        "bg-surface-basic-hovered": !!focused && !active && !disabled,
+        "bg-surface-basic-active": !!active,
+        "text-text-default": !disabled,
+        "text-text-disabled": !!disabled,
       })}
     >
-      {typeof render === 'string'
+      {typeof render === "string"
         ? render
         : render?.({ active: !!active, focused: !!focused, disabled })}
     </div>
@@ -51,8 +51,8 @@ const suffixRender = ({
   return (
     <div
       className={cn(
-        'px-lg flex flex-row items-center gap-lg',
-        error && !disabled ? 'text-text-critical' : '',
+        "px-lg flex flex-row items-center gap-lg",
+        error && !disabled ? "text-text-critical" : "",
       )}
     >
       {loading && (
@@ -73,7 +73,7 @@ const suffixRender = ({
 const Select = <T, U extends boolean | undefined = undefined>(
   props: ISelect<T, U> & {
     label?: ReactNode;
-    size?: 'md' | 'lg';
+    size?: "md" | "lg";
     message?: ReactNode;
     loading?: boolean;
     error?: boolean;
@@ -83,7 +83,7 @@ const Select = <T, U extends boolean | undefined = undefined>(
     value,
     options,
     label,
-    size = 'md',
+    size = "md",
     placeholder,
     message,
     error = false,
@@ -118,14 +118,14 @@ const Select = <T, U extends boolean | undefined = undefined>(
                 className ||
                 (() => {
                   const c = cn(
-                    'rounded flex flex-row items-center border bodyMd outline-none cursor-default',
+                    "rounded flex flex-row items-center border bodyMd outline-none cursor-default",
                     {
-                      'py-[10px] px-lg h-[48px]': size === 'lg',
-                      'py-[6px] px-lg h-[36px]': size === 'md',
+                      "py-[10px] px-lg h-[48px]": size === "lg",
+                      "py-[6px] px-lg h-[36px]": size === "md",
                     },
                     error && !disabled
-                      ? 'bg-surface-critical-subdued border-text-critical text-text-critical'
-                      : '',
+                      ? "bg-surface-critical-subdued border-text-critical text-text-critical"
+                      : "",
                   );
                   return {
                     default: `${c} border-border-default bg-surface-basic-input text-text-default`,
@@ -145,8 +145,8 @@ const Select = <T, U extends boolean | undefined = undefined>(
                 <div
                   className={cn(
                     error && !disabled
-                      ? 'text-text-critical/70'
-                      : 'text-text-disabled',
+                      ? "text-text-critical/70"
+                      : "text-text-disabled",
                   )}
                 >
                   {placeholder}
@@ -192,12 +192,12 @@ const Select = <T, U extends boolean | undefined = undefined>(
       <AnimateHide show={!!message}>
         <div
           className={cn(
-            'bodySm pulsable',
+            "bodySm pulsable",
             {
-              'text-text-critical': !!error,
-              'text-text-default': !error,
+              "text-text-critical": !!error,
+              "text-text-default": !error,
             },
-            'pt-md',
+            "pt-md",
           )}
         >
           {message}
