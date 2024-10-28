@@ -1,6 +1,5 @@
 ignorePatterns: ["!apps/**/*","!.restart.js"]
 
-
 extends:
   - airbnb
   - airbnb/hooks
