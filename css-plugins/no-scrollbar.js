@@ -10,7 +10,7 @@ function noScrollbar() {
         'scrollbar-width': 'none',
       },
       '.no-scrollbar': {
-        '@apply no-scrollbar-base': {},
+        '@apply kl-no-scrollbar-base': {},
       },
     });
   };

@@ -21,20 +21,24 @@ export const Thumbnail = ({
   return (
     <div
       className={classNames(
-        'rounded border border-border-default overflow-clip',
+        'kl-rounded kl-border kl-border-border-default kl-overflow-clip',
         {
-          'w-5xl h-5xl': size === 'xs',
-          'w-6xl h-6xl': size === 'sm',
-          'w-8xl h-8xl': size === 'md',
-          'w-9xl h-w-9xl': size === 'lg',
+          'kl-w-5xl kl-h-5xl': size === 'xs',
+          'kl-w-6xl kl-h-6xl': size === 'sm',
+          'kl-w-8xl kl-h-8xl': size === 'md',
+          'kl-w-9xl kl-h-w-9xl': size === 'lg',
         },
         {
-          'rounded-full': rounded,
-          'rounded-md': !rounded,
-        }
+          'kl-rounded-full': rounded,
+          'kl-rounded-md': !rounded,
+        },
       )}
     >
-      <img src={src} alt="thumbnail" className="w-full h-full object-cover" />
+      <img
+        src={src}
+        alt="thumbnail"
+        className="kl-w-full kl-h-full kl-object-cover"
+      />
     </div>
   );
 };

@@ -128,22 +128,25 @@ export const TextInputBase = forwardRef<HTMLInputElement, ITextInputBase>(
 
     const containerRef = useRef<HTMLDivElement>(null);
     return (
-      <div className={cn('flex flex-col', containerClassName)}>
+      <div className={cn('kl-flex kl-flex-col', containerClassName)}>
         {(label || extra) && (
           <div
-            className={cn('flex items-center justify-between gap-md', {
-              'pb-md': !!label || !!extra,
-            })}
+            className={cn(
+              'kl-flex kl-items-center kl-justify-between kl-gap-md',
+              {
+                'kl-pb-md': !!label || !!extra,
+              },
+            )}
           >
             <label
-              className="select-none bodyMd-medium pulsable min-w-[33%] text-text-soft"
+              className="kl-select-none kl-bodyMd-medium kl-pulsable kl-min-w-[33%] kl-text-text-soft"
               htmlFor={id}
             >
               {label}
             </label>
             <div
               className={cn({
-                'h-4xl pulsable': !!label || !!extra,
+                'kl-h-4xl pulsable': !!label || !!extra,
               })}
             >
               {extra && cloneElement(extra)}
@@ -153,31 +156,31 @@ export const TextInputBase = forwardRef<HTMLInputElement, ITextInputBase>(
         <div
           ref={containerRef}
           className={cn(
-            'transition-all rounded border flex flex-row items-center relative ring-offset-1 group-data-[theme=dark]/html:ring-offset-0',
+            'kl-transition-all kl-rounded kl-border kl-flex kl-flex-row kl-items-center kl-relative kl-ring-offset-1 group-data-[theme=dark]/html:kl-ring-offset-0',
             {
-              'text-text-critical bg-surface-critical-subdued border-border-critical':
+              'kl-text-text-critical kl-bg-surface-critical-subdued kl-border-border-critical':
                 error,
-              'text-text-default border-border-default bg-surface-basic-input':
+              'kl-text-text-default kl-border-border-default kl-bg-surface-basic-input':
                 !error,
-              'text-text-disabled border-border-disabled bg-surface-basic-input':
+              'kl-text-text-disabled kl-border-border-disabled kl-bg-surface-basic-input':
                 disabled,
-              'pr-0': component !== 'input',
+              'kl-pr-0': component !== 'input',
             },
             {
-              'h-[38px]': size === 'md' && component === 'input',
-              'h-[48px]': size === 'lg' && component === 'input',
-              'h-[60px]': size === 'xl' && component === 'input',
+              'kl-h-[38px]': size === 'md' && component === 'input',
+              'kl-h-[48px]': size === 'lg' && component === 'input',
+              'kl-h-[60px]': size === 'xl' && component === 'input',
             },
-            size === 'xl' ? '!px-2xl' : 'px-lg',
+            size === 'xl' ? '!kl-px-2xl' : 'kl-px-lg',
             className,
           )}
         >
           {!!prefixIcon && (
             <div
-              className={cn('pr-lg bodyMd', {
-                'text-text-strong': !error && !disabled,
-                'text-text-critical': error,
-                'text-text-disabled': disabled,
+              className={cn('kl-pr-lg kl-bodyMd', {
+                'kl-text-text-strong': !error && !disabled,
+                'kl-text-text-critical': error,
+                'kl-text-text-disabled': disabled,
               })}
             >
               {cloneElement(prefixIcon, {
@@ -186,7 +189,7 @@ export const TextInputBase = forwardRef<HTMLInputElement, ITextInputBase>(
               })}
             </div>
           )}
-          {!!prefix && <div className="cursor-default">{prefix}</div>}
+          {!!prefix && <div className="kl-cursor-default">{prefix}</div>}
           <Component
             {...(type === 'number'
               ? {
@@ -200,25 +203,25 @@ export const TextInputBase = forwardRef<HTMLInputElement, ITextInputBase>(
             id={id}
             tabIndex={tabIndex}
             className={cn(
-              'outline-none focus-within:outline-none focus:outline-none focus-visible:outline-none flex-1 w-full h-full',
-              'rounded bg-transparent',
+              'kl-outline-none focus-within:kl-outline-none focus:kl-outline-none focus-visible:kl-outline-none kl-flex-1 kl-w-full kl-h-full',
+              'kl-rounded kl-bg-transparent',
               {
-                'text-text-critical placeholder:text-text-critical/70 bgh':
+                'kl-text-text-critical placeholder:kl-text-text-critical/70':
                   error && !disabled,
-                'text-text-default': !error && !disabled,
-                'text-text-disabled': disabled,
+                'kl-text-text-default': !error && !disabled,
+                'kl-text-text-disabled': disabled,
               },
               {
-                'py-xl': size === 'lg',
-                'py-lg': size === 'md',
+                'kl-py-xl': size === 'lg',
+                'kl-py-lg': size === 'md',
               },
               {
-                'resize-none': !resize,
+                'kl-resize-none': !resize,
               },
               {
-                'no-spinner': type === 'number',
+                'kl-no-spinner': type === 'number',
               },
-              size === 'xl' ? '' : 'bodyMd',
+              size === 'xl' ? '' : 'kl-bodyMd',
               textFieldClassName,
             )}
             value={value}
@@ -229,7 +232,7 @@ export const TextInputBase = forwardRef<HTMLInputElement, ITextInputBase>(
             }}
             onFocus={(e: any) => {
               if (focusRing) {
-                containerRef.current?.classList.add('ring-2');
+                containerRef.current?.classList.add('kl-ring-2');
               }
               onFocus(e);
             }}
@@ -238,19 +241,19 @@ export const TextInputBase = forwardRef<HTMLInputElement, ITextInputBase>(
             onKeyDown={onKeyDown}
             autoComplete={autoComplete}
             onBlur={(e: any) => {
-              containerRef.current?.classList.remove('ring-2');
+              containerRef.current?.classList.remove('kl-ring-2');
 
               onBlur(e);
             }}
             {...extraProps}
           />
-          {!!suffix && <div className="cursor-default">{suffix}</div>}
+          {!!suffix && <div className="kl-cursor-default">{suffix}</div>}
           {!!suffixIcon && (
             <div
-              className={cn('pl-lg bodyMd', {
-                'text-text-critical': error,
-                'text-text-strong': !error && !disabled,
-                'text-text-disabled': disabled,
+              className={cn('kl-pl-lg kl-bodyMd', {
+                'kl-text-text-critical': error,
+                'kl-text-text-strong': !error && !disabled,
+                'kl-text-text-disabled': disabled,
               })}
             >
               {cloneElement(suffixIcon, {
@@ -268,9 +271,9 @@ export const TextInputBase = forwardRef<HTMLInputElement, ITextInputBase>(
                 if (onChange) onChange({ ...e, target: { value: '' } });
               }}
               className={cn(
-                'outline-none flex items-center rounded justify-center',
+                'kl-outline-none kl-flex kl-items-center kl-rounded kl-justify-center',
                 {
-                  'cursor-default': disabled,
+                  'kl-cursor-default': disabled,
                 },
               )}
             >
@@ -285,9 +288,9 @@ export const TextInputBase = forwardRef<HTMLInputElement, ITextInputBase>(
                 setT((prev) => (prev === 'text' ? 'password' : 'text'));
               }}
               className={cn(
-                'outline-none flex items-center rounded justify-center',
+                'kl-outline-none kl-flex kl-items-center kl-rounded kl-justify-center',
                 {
-                  'cursor-default': disabled,
+                  'kl-cursor-default': disabled,
                 },
               )}
             >
@@ -303,12 +306,12 @@ export const TextInputBase = forwardRef<HTMLInputElement, ITextInputBase>(
         <AnimateHide show={!!message}>
           <div
             className={cn(
-              'bodySm pulsable',
+              'kl-bodySm pulsable',
               {
-                'text-text-critical': error,
-                'text-text-default': !error,
+                'kl-text-text-critical': error,
+                'kl-text-text-default': !error,
               },
-              'pt-md',
+              'kl-pt-md',
             )}
           >
             {message}
@@ -343,15 +346,18 @@ export const NumberInput = ({
         value,
         step,
         suffix: (
-          <div className="flex flex-row items-center gap-xl -mr-lg">
+          <div className="kl-flex kl-flex-row kl-items-center kl-gap-xl -kl-mr-lg">
             {suffix}
             <div
-              className={cn('flex flex-col justify-center items-center', {
-                'bg-surface-critical-subdued divide-border-critical divide-y rounded-r border-l border-border-critical text-text-critical placeholder:text-critical-400':
-                  error,
-                'text-text-default border-l border-border-default divide-border-default divide-y':
-                  !error,
-              })}
+              className={cn(
+                'kl-flex kl-flex-col kl-justify-center kl-items-center',
+                {
+                  'kl-bg-surface-critical-subdued kl-divide-border-critical kl-divide-y kl-rounded-r kl-border-l kl-border-border-critical kl-text-text-critical placeholder:kl-text-critical-400':
+                    error,
+                  'kl-text-text-default kl-border-l kl-border-border-default kl-divide-border-default kl-divide-y':
+                    !error,
+                },
+              )}
               tabIndex={-1}
             >
               <button
@@ -370,7 +376,7 @@ export const NumberInput = ({
                   ref?.current?.focus();
                 }}
                 className={cn(
-                  'flex-1 p-sm disabled:text-icon-disabled hover:bg-surface-basic-hovered active:bg-surface-basic-pressed',
+                  'kl-flex-1 kl-p-sm disabled:kl-text-icon-disabled hover:kl-bg-surface-basic-hovered active:kl-bg-surface-basic-pressed',
                 )}
               >
                 <CaretUpFill size={12} color="currentColor" />
@@ -388,7 +394,7 @@ export const NumberInput = ({
                   ref?.current?.focus();
                 }}
                 className={cn(
-                  'flex-1 p-sm disabled:text-icon-disabled hover:bg-surface-basic-hovered active:bg-surface-basic-pressed',
+                  'kl-flex-1 kl-p-sm disabled:kl-text-icon-disabled hover:kl-bg-surface-basic-hovered active:kl-bg-surface-basic-pressed',
                 )}
               >
                 <CaretDownFill size={12} color="currentColor" />

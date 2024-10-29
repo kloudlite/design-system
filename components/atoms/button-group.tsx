@@ -15,11 +15,13 @@ const Button = forwardRef<HTMLButtonElement, IButtonGroupButton>(
           {...props}
           variant={props.variant}
           noRounded
-          className={cn('-ml-xs first:rounded-l last:rounded-r first:ml-0')}
+          className={cn(
+            '-kl-ml-xs first:kl-rounded-l last:kl-rounded-r first:kl-ml-0',
+          )}
         />
       </ButtonGroupPrimitive.Item>
     );
-  }
+  },
 );
 
 export interface IButtonGroupIconButton extends IIconButton {
@@ -37,11 +39,13 @@ const IconButton = forwardRef<HTMLButtonElement, IButtonGroupIconButton>(
           iconOnly
           prefix={props.icon}
           noRounded
-          className={cn('-ml-xs first:rounded-l last:rounded-r first:ml-0')}
+          className={cn(
+            '-kl-ml-xs first:kl-rounded-l last:kl-rounded-r first:kl-ml-0',
+          )}
         />
       </ButtonGroupPrimitive.Item>
     );
-  }
+  },
 );
 
 interface IButtonGroup {
@@ -63,7 +67,9 @@ const Root = ({
 }: IButtonGroup) => {
   return (
     <ButtonGroupPrimitive.Root
-      className="bg-surface-basic-default rounded shadow-button flex flex-row w-fit"
+      className={cn(
+        'kl-bg-surface-basic-default kl-rounded kl-shadow-button kl-flex kl-flex-row kl-w-fit',
+      )}
       onClick={(_e) => {
         // if (onClick) onClick(e);
       }}

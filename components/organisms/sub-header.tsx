@@ -17,8 +17,8 @@ export const SubHeader = ({
   LinkComponent = null,
 }: ISubHeader) => {
   return (
-    <div className="flex flex-row items-center justify-between py-6xl gap-xl">
-      <div className="flex flex-row items-center gap-xl">
+    <div className="kl-flex kl-flex-row kl-items-center kl-justify-between kl-py-6xl kl-gap-xl">
+      <div className="kl-flex kl-flex-row kl-items-center kl-gap-xl">
         {backUrl && (
           <IconButton
             variant="basic"
@@ -27,9 +27,11 @@ export const SubHeader = ({
             linkComponent={LinkComponent}
           />
         )}
-        <motion.div className="text-text-strong heading2xl">{title}</motion.div>
+        <motion.div className="kl-text-text-strong kl-heading2xl">
+          {title}
+        </motion.div>
       </div>
-      <div className="flex flex-row items-center justify-center min-h-[38px]">
+      <div className="kl-flex kl-flex-row kl-items-center kl-justify-center kl-min-h-[38px]">
         {actions && actions}
       </div>
     </div>

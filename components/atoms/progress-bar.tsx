@@ -20,9 +20,9 @@ const context = createContext<IProgressbarContext>({
 
 const PBar = ({ duration }: { duration: number }) => {
   return (
-    <motion.div className="fixed top-0 left-0 right-0 z-[999]">
+    <motion.div className="kl-fixed kl-top-0 kl-left-0 kl-right-0 kl-z-[999]">
       <motion.div
-        className="absolute"
+        className="kl-absolute"
         initial={{
           left: '0%',
         }}
@@ -36,7 +36,7 @@ const PBar = ({ duration }: { duration: number }) => {
         }}
       >
         <motion.div
-          className="bg-surface-primary-default h-sm animate-pulse"
+          className="kl-bg-surface-primary-default kl-h-sm kl-animate-pulse"
           initial={{
             width: '12vw',
           }}
@@ -67,7 +67,7 @@ const ProgressContainer = ({ children }: { children: ReactNode }) => {
           count,
           setCount,
         }),
-        [count, setCount]
+        [count, setCount],
       )}
     >
       {count > 0 ? <PBar key={duration} duration={duration} /> : null}

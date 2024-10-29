@@ -18,23 +18,23 @@ export const Switch = ({
   const id = useId();
 
   return (
-    <div className="flex gap-lg items-center w-fit">
+    <div className="kl-flex kl-gap-lg kl-items-center kl-w-fit">
       <SwitchPrimitive.Root
         className={cn(
-          'transition-all w-7xl rounded-full border flex items-center p-sm cursor-pointer',
-          'ring-border-focus ring-offset-1 focus:ring-2 outline-none',
+          'kl-transition-all kl-w-7xl kl-rounded-full kl-border kl-flex kl-items-center kl-p-sm kl-cursor-pointer',
+          'kl-ring-border-focus kl-ring-offset-1 focus:kl-ring-2 kl-outline-none',
           {
-            'data-[state=unchecked]:bg-surface-basic-default data-[state=unchecked]:border-border-default':
+            'data-[state=unchecked]:kl-bg-surface-basic-default data-[state=unchecked]:kl-border-border-default':
               !disabled,
           },
           {
-            'data-[state=checked]:bg-surface-primary-default data-[state=checked]:border-border-primary':
+            'data-[state=checked]:kl-bg-surface-primary-default data-[state=checked]:kl-border-border-primary':
               !disabled,
           },
           {
-            'data-[disabled]:bg-surface-basic-default data-[disabled]:border-border-disabled data-[disabled]:!cursor-default':
+            'data-[disabled]:kl-bg-surface-basic-default data-[disabled]:kl-border-border-disabled data-[disabled]:!kl-cursor-default':
               disabled,
-          }
+          },
         )}
         id={id}
         disabled={disabled}
@@ -43,7 +43,7 @@ export const Switch = ({
       >
         <SwitchPrimitive.Thumb
           className={cn(
-            'group rounded-full translate-x-0 transition-all duration-200 data-[state=checked]:translate-x-full'
+            'kl-group kl-rounded-full kl-translate-x-0 kl-transition-all kl-duration-200 data-[state=checked]:kl-translate-x-full',
           )}
         >
           <svg
@@ -54,12 +54,12 @@ export const Switch = ({
             xmlns="http://www.w3.org/2000/svg"
             className={cn(
               {
-                'group-data-[disabled]:fill-icon-disabled': disabled,
+                'group-data-[disabled]:kl-fill-icon-disabled': disabled,
               },
               {
-                'group-data-[state=unchecked]:fill-surface-primary-default group-data-[state=checked]:fill-surface-basic-default':
+                'group-data-[state=unchecked]:kl-fill-surface-primary-default group-data-[state=checked]:kl-fill-surface-basic-default':
                   !disabled,
-              }
+              },
             )}
           >
             <circle cx="11" cy="11" r="10.5" />
@@ -70,10 +70,10 @@ export const Switch = ({
         <label
           className={cn(
             {
-              'text-text-disabled': disabled,
-              'text-text-default cursor-pointer': !disabled,
+              'kl-text-text-disabled': disabled,
+              'kl-text-text-default kl-cursor-pointer': !disabled,
             },
-            'bodyMd-medium select-none'
+            'kl-bodyMd-medium kl-select-none',
           )}
           htmlFor={id}
         >

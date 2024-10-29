@@ -13,7 +13,7 @@ export const DefaultTextArea = {
   args: {
     label: 'Default',
     value: 'Hello',
-    className: 'w-full',
+    className: 'kl-w-full',
   },
 };
 
@@ -24,7 +24,7 @@ export const ErrorTextArea = {
     error: true,
     extra: <Button content="Link" variant="primary-plain" />,
     message: (
-      <span className="flex flex-row items-center gap-x-1">
+      <span className="kl-flex kl-flex-row kl-items-center kl-gap-x-1">
         <Info size={16} color="currentColor" /> Required
       </span>
     ),

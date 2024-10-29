@@ -9,24 +9,28 @@ type IProgressTrackerItem<I = any> = {
 } & I;
 
 function ProgressTrackerItem<I = any>(
-  props: IProgressTrackerItem<I> & ChildrenProps
+  props: IProgressTrackerItem<I> & ChildrenProps,
 ) {
   const { children, active = false, completed = false } = props;
   return (
     <div
       className={cn(
-        'flex flex-row gap-x-xl items-center headingMd select-none',
+        'kl-flex kl-flex-row kl-gap-x-xl kl-items-center kl-headingMd kl-select-none',
         {
-          'text-text-default': active,
-          'text-text-disabled': !active || (!active && completed),
-        }
+          'kl-text-text-default': active,
+          'kl-text-text-disabled': !active || (!active && completed),
+        },
       )}
     >
-      <div className={cn('rounded-full flex items-center justify-center')}>
+      <div
+        className={cn(
+          'kl-rounded-full kl-flex kl-items-center kl-justify-center',
+        )}
+      >
         {(active || completed) && <RecordFill size={12} color="currentColor" />}
         {!active && !completed && <Circle size={12} color="currentColor" />}
       </div>
-      <div className="py-lg select-none">{children}</div>
+      <div className="kl-py-lg kl-select-none">{children}</div>
     </div>
   );
 }
@@ -51,15 +55,15 @@ function Root<I = any, V = any>({
   onClick,
 }: IProgressTracker<I, V>) {
   return (
-    <div className="flex flex-col gap-y-lg">
+    <div className="kl-flex kl-flex-col kl-gap-y-lg">
       {items.map(({ item, value }, index) => {
         // const childProps = childElement.props;
         // as IProgressTrackerItem
         return (
           <div
             key={JSON.stringify(value)}
-            className={cn('flex flex-col select-none', {
-              'cursor-pointer': !!onClick,
+            className={cn('kl-flex kl-flex-col kl-select-none', {
+              'kl-cursor-pointer': !!onClick,
             })}
             onClick={() => {
               if (onClick) onClick(value);
@@ -68,7 +72,7 @@ function Root<I = any, V = any>({
             {children(item)}
             {/* <ProgressTrackerItem {...item} /> */}
             {index < items.length - 1 && (
-              <div className="flex items-center justify-center w-[12px] -mt-[13px] -mb-[21px]">
+              <div className="kl-flex kl-items-center kl-justify-center kl-w-[12px] -kl-mt-[13px] -kl-mb-[21px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2"

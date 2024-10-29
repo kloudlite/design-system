@@ -2,14 +2,14 @@ import { ReactNode } from 'react';
 import { cn } from '../utils';
 
 const colors = {
-  one: ['fill-text-soft', 'text-text-soft'],
-  two: ['fill-icon-warning', 'text-icon-warning'],
-  three: ['fill-icon-success', 'text-icon-success'],
-  four: ['fill-icon-critical', 'text-icon-critical'],
-  five: ['fill-icon-secondary', 'text-icon-secondary'],
-  six: ['fill-icon-primary', 'text-icon-primary'],
-  seven: ['basic-surface-subdued', 'text-icon-default'],
-  dark: ['fill-text-soft', 'text-text-soft'],
+  one: ['kl-fill-text-soft', 'kl-fill-text-soft'],
+  two: ['kl-fill-icon-warning', 'kl-fill-icon-warning'],
+  three: ['kl-fill-icon-success', 'kl-fill-icon-success'],
+  four: ['kl-fill-icon-critical', 'kl-fill-icon-critical'],
+  five: ['kl-fill-icon-secondary', 'kl-fill-icon-secondary'],
+  six: ['kl-fill-icon-primary', 'kl-fill-icon-primary'],
+  seven: ['kl-basic-surface-subdued', 'kl-basic-surface-subdued'],
+  dark: ['kl-fill-text-soft', 'kl-fill-text-soft'],
 };
 
 type AvatarSizes = 'xs' | 'sm' | 'md' | 'lg' | (string & NonNullable<unknown>);
@@ -38,7 +38,6 @@ export const AvatarBase = ({
   color = 'one',
   image,
   dot,
-  isTemplate = false,
   className,
 }: IAvatar) => {
   const isExternal = !Object.keys(colors).includes(color);
@@ -48,36 +47,36 @@ export const AvatarBase = ({
       style={
         isExternal && color !== 'none'
           ? {
-            background: color,
-          }
+              background: color,
+            }
           : {}
       }
       className={cn(
         'pulsable pulsable-circle',
-        'relative flex-shrink-0 flex flex-row items-center justify-center',
-        'outline-none transition-all',
-        'rounded-full',
-        'border border-border-default',
+        'kl-relative kl-flex-shrink-0 kl-flex kl-flex-row kl-items-center kl-justify-center',
+        'kl-outline-none kl-transition-all',
+        'kl-rounded-full',
+        'kl-border kl-border-border-default',
         className,
         {
-          'w-8xl h-8xl': size === 'lg',
-          'w-6xl h-6xl': size === 'md',
-          'w-5xl h-5xl': size === 'sm',
-          'w-4xl h-4xl': size === 'xs',
+          'kl-w-8xl kl-h-8xl': size === 'lg',
+          'kl-w-6xl kl-h-6xl': size === 'md',
+          'kl-w-5xl kl-h-5xl': size === 'sm',
+          'kl-w-4xl kl-h-4xl': size === 'xs',
         },
         !image
           ? {
-            ' p-lg': size === 'lg',
-            ' p-md': size === 'md' || size === 'xs' || size === 'sm',
-          }
+              'kl-p-lg': size === 'lg',
+              'kl-p-md': size === 'md' || size === 'xs' || size === 'sm',
+            }
           : '',
         {
-          'bg-surface-basic-default': !isExternal,
-        }
+          'kl-bg-surface-basic-default': !isExternal,
+        },
       )}
     >
       {dot && (
-        <span className="absolute h-lg w-lg bg-icon-critical -top-sm -left-sm rounded-full" />
+        <span className="kl-absolute kl-h-lg kl-w-lg kl-bg-icon-critical -kl-top-sm -kl-left-sm kl-rounded-full" />
       )}
       {image && (
         <span

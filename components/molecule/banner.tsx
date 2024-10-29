@@ -20,16 +20,16 @@ interface IBanner {
 const getStyle = (type: IBanner['type']) => {
   switch (type) {
     case 'info':
-      return 'bg-surface-primary-subdued border-border-primary';
+      return 'kl-bg-surface-primary-subdued kl-border-border-primary';
     case 'success':
-      return 'bg-surface-success-subdued border-border-success';
+      return 'kl-bg-surface-success-subdued kl-border-border-success';
     case 'warning':
-      return 'bg-surface-warning-subdued border-border-warning';
+      return 'kl-bg-surface-warning-subdued kl-border-border-warning';
     case 'critical':
-      return 'bg-surface-critical-subdued border-border-critical';
+      return 'kl-bg-surface-critical-subdued kl-border-border-critical';
     case 'default':
     default:
-      return 'bg-surface-basic-subdued border-border-default';
+      return 'kl-bg-surface-basic-subdued kl-border-border-default';
   }
 };
 
@@ -38,29 +38,25 @@ const Icon = ({ type }: { type: IBanner['type'] }) => {
   switch (type) {
     case 'info':
       return (
-        <span className="text-text-primary">
+        <span className="kl-text-text-primary">
           <InfoFill size={iconSize} />
         </span>
       );
     case 'success':
       return (
-        <span
-          className="
-        text-text-success
-        "
-        >
+        <span className="kl-text-text-success">
           <CheckCircleFill size={iconSize} />
         </span>
       );
     case 'warning':
       return (
-        <span className="text-text-warning">
+        <span className="kl-text-text-warning">
           <WarningFill size={iconSize} />
         </span>
       );
     case 'critical':
       return (
-        <span className="text-text-critical">
+        <span className="kl-text-text-critical">
           {' '}
           <WarningOctagonFill size={iconSize} />
         </span>
@@ -68,7 +64,7 @@ const Icon = ({ type }: { type: IBanner['type'] }) => {
     case 'default':
     default:
       return (
-        <span className="text-text-default">
+        <span className="kl-text-text-default">
           <InfoFill size={iconSize} />
         </span>
       );
@@ -79,16 +75,16 @@ const Banner = (props: IBanner) => {
   return (
     <div
       className={cn(
-        'p-2xl flex flex-row gap-2xl border rounded-lg text-text-default items-start',
-        getStyle(type)
+        'kl-p-2xl kl-flex kl-flex-row kl-gap-2xl kl-border kl-rounded-lg kl-text-text-default kl-items-start',
+        getStyle(type),
       )}
     >
-      <span className={cn(!!title && !!body ? 'pt-md' : '')}>
+      <span className={cn(!!title && !!body ? 'kl-pt-md' : '')}>
         <Icon type={type} />
       </span>
-      <div className="flex-1 flex flex-col gap-sm">
-        {title && <div className="headingMd">{title}</div>}
-        {body && <div className="bodyMd">{body}</div>}
+      <div className="kl-flex-1 kl-flex kl-flex-col kl-gap-sm">
+        {title && <div className="kl-headingMd">{title}</div>}
+        {body && <div className="kl-bodyMd">{body}</div>}
       </div>
       {showclose && (
         <span>

@@ -8,8 +8,8 @@ import { cn } from '../utils';
 
 const Header = ({ children, showclose = true }: any) => {
   return (
-    <div className="border-b border-border-default p-3xl flex flex-row items-center min-h-[69px]">
-      <Dialog.Title className="headingLg text-text-strong flex-1">
+    <div className="kl-border-b kl-border-border-default kl-p-3xl kl-flex kl-flex-row kl-items-center kl-min-h-[69px]">
+      <Dialog.Title className="kl-headingLg kl-text-text-strong kl-flex-1">
         {children}
       </Dialog.Title>
       {showclose && (
@@ -31,8 +31,8 @@ const Content = ({
   return (
     <div
       className={cn(
-        'p-3xl overscroll-y-auto overflow-x-hidden flex-1 md:max-h-[65vh]',
-        className
+        'kl-p-3xl kl-overscroll-y-auto kl-overflow-x-hidden kl-flex-1 md:kl-max-h-[65vh]',
+        className,
       )}
     >
       {children}
@@ -41,12 +41,12 @@ const Content = ({
 };
 
 const Form = (props: ComponentProps<'form'>) => {
-  return <form {...props} className="flex-1 flex flex-col " />;
+  return <form {...props} className="kl-flex-1 kl-flex kl-flex-col" />;
 };
 
 const Footer = ({ children }: ChildrenProps) => {
   return (
-    <div className="p-3xl flex flex-row justify-end gap-lg bg-surface-basic-active">
+    <div className="kl-p-3xl kl-flex kl-flex-row kl-justify-end kl-gap-lg kl-bg-surface-basic-active">
       {children}
     </div>
   );
@@ -105,8 +105,8 @@ const PopupRoot = ({
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2, ease: 'anticipate' }}
                 className={cn(
-                  'fixed inset-0 z-[9999999]',
-                  backdrop ? 'bg-surface-basic-overlay-bg/60' : ''
+                  'kl-fixed kl-inset-0 kl-z-[9999999]',
+                  backdrop ? 'kl-bg-surface-basic-overlay-bg/60' : '',
                 )}
               />
             </Dialog.Overlay>
@@ -117,12 +117,12 @@ const PopupRoot = ({
                 exit={{ x: '-50%', y: '-47%', opacity: 0 }}
                 transition={{ duration: 0.3, ease: 'anticipate' }}
                 className={cn(
-                  'flex flex-col',
-                  'z-[99999999] outline-none transform overflow-hidden md:rounded bg-surface-basic-default shadow-modal',
-                  'fixed top-1/2 left-1/2',
-                  'w-full h-full md:!h-auto md:w-[612px]',
-                  'border border-border-default',
-                  className
+                  'kl-flex kl-flex-col',
+                  'kl-z-[99999999] kl-outline-none kl-transform kl-overflow-hidden md:kl-rounded kl-bg-surface-basic-default kl-shadow-modal',
+                  'kl-fixed kl-top-1/2 kl-left-1/2',
+                  'kl-w-full kl-h-full md:!kl-h-auto md:kl-w-[612px]',
+                  'kl-border kl-border-border-default',
+                  className,
                 )}
               >
                 {children}

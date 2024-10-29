@@ -36,7 +36,7 @@ const AnimateHide = ({
             height: 0,
             y: -5,
           }}
-          className={cn(className, 'overflow-hidden')}
+          className={cn(className, 'kl-overflow-hidden')}
         >
           {children}
         </motion.div>

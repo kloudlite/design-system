@@ -45,7 +45,7 @@ const Pulsable = ({
             'h-full',
             'inset-0',
             'rounded',
-            'pulse-child'
+            'pulse-child',
           );
           element.appendChild(pulseEl);
         }
@@ -89,7 +89,7 @@ const Pulsable = ({
     <div
       ref={ref}
       className={cn('pulse-container', {
-        'opacity-0 transition-all': isLoading && isCalculating,
+        'kl-opacity-0 kl-transition-all': isLoading && isCalculating,
       })}
     >
       {children}

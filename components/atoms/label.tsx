@@ -6,7 +6,7 @@ interface ILabel {
 }
 const Label = ({ children, label }: ILabel) => {
   return (
-    <div className="flex flex-col gap-md">
+    <div className="kl-flex kl-flex-col kl-gap-md">
       <span>{label}</span>
       {children}
     </div>

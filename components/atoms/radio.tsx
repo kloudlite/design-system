@@ -40,24 +40,24 @@ export const Item = ({
       <label
         htmlFor={id}
         className={cn(
-          'flex items-center w-fit',
+          'kl-flex kl-items-center kl-w-fit',
           {
-            'cursor-pointer': !disabled,
-            'flex-row-reverse': labelPlacement === 'left',
-            'flex-row': labelPlacement === 'right',
+            'kl-cursor-pointer': !disabled,
+            'kl-flex-row-reverse': labelPlacement === 'left',
+            'kl-flex-row': labelPlacement === 'right',
           },
-          className
+          className,
         )}
         aria-label={value}
       >
         <RadioGroupPrimitive.Item
           className={cn(
-            'w-2xl h-2xl outline-none rounded-full border pulsable pulsable-hidden ring-border-focus focus:ring-2 transition-all flex items-center justify-center border-border-default',
+            'kl-w-2xl kl-h-2xl kl-outline-none kl-rounded-full kl-border kl-pulsable kl-pulsable-hidden kl-ring-border-focus focus:kl-ring-2 kl-transition-all kl-flex kl-items-center kl-justify-center kl-border-border-default',
             {
-              'hover:bg-surface-basic-hovered': !disabled,
-              'data-[state=checked]:border-border-primary': !disabled,
-              'data-[disabled]:border-border-disabled': disabled,
-            }
+              'hover:kl-bg-surface-basic-hovered': !disabled,
+              'data-[state=checked]:kl-border-border-primary': !disabled,
+              'data-[disabled]:kl-border-border-disabled': disabled,
+            },
           )}
           value={value}
           id={id}
@@ -65,19 +65,19 @@ export const Item = ({
           aria-label={value}
         >
           <RadioGroupPrimitive.Indicator
-            className={cn('block w-lg h-lg rounded-full', {
-              'bg-icon-disabled': disabled,
-              'bg-surface-primary-default': !disabled,
+            className={cn('kl-block kl-w-lg kl-h-lg kl-rounded-full', {
+              'kl-bg-icon-disabled': disabled,
+              'kl-bg-surface-primary-default': !disabled,
             })}
           />
         </RadioGroupPrimitive.Item>
         <div
           className={cn(
             {
-              'text-text-disabled': disabled,
-              'text-text-default cursor-pointer': !disabled,
+              'kl-text-text-disabled': disabled,
+              'kl-text-text-default kl-cursor-pointer': !disabled,
             },
-            'bodyMd-medium pl-lg select-none flex-1'
+            'kl-bodyMd-medium kl-pl-lg kl-select-none kl-flex-1',
           )}
         >
           {children}
@@ -90,7 +90,7 @@ export const Item = ({
 
 export const Root = ({
   value,
-  onChange = () => { },
+  onChange = () => {},
   label,
   disabled = false,
   children,
@@ -104,19 +104,19 @@ export const Root = ({
       className={cn(
         'flex ',
         {
-          'flex-row gap-x-xl': direction === 'horizontal',
-          'flex-col gap-y-xl': direction === 'vertical',
+          'kl-flex-row kl-gap-x-xl': direction === 'horizontal',
+          'kl-flex-col kl-gap-y-xl': direction === 'vertical',
         },
-        className
+        className,
       )}
       value={value}
       aria-label={label || 'Radio choice'}
       disabled={disabled}
       onValueChange={onChange}
     >
-      {label && <span className="bodyMd-medium">{label}</span>}
+      {label && <span className="kl-bodyMd-medium">{label}</span>}
       {React.Children.map(children, (child) =>
-        cloneElement(child, { labelPlacement, withBounceEffect })
+        cloneElement(child, { labelPlacement, withBounceEffect }),
       )}
     </RadioGroupPrimitive.Root>
   );

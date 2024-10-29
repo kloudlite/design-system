@@ -21,7 +21,7 @@ export const BounceIt = ({
   return (
     <motion.div
       tabIndex={-1}
-      className={cn('inline-block', className)}
+      className={cn('kl-inline-block', className)}
       initial={{ y: 0 }}
       whileTap={{ y: 0.5 }}
       transition={{ ease: 'anticipate', duration: 0.1 }}

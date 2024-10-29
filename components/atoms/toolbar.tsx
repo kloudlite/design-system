@@ -27,7 +27,7 @@ type ScopedProps<P> = P & { __scopeToolbar?: Scope };
 
 const [createToolbarContext, _createToolbarScope] = createContextScope(
   TOOLBAR_NAME,
-  [createRovingFocusGroupScope, createToggleGroupScope]
+  [createRovingFocusGroupScope, createToggleGroupScope],
 );
 const useRovingFocusGroupScope = createRovingFocusGroupScope();
 const useToggleGroupScope = createToggleGroupScope();
@@ -67,12 +67,12 @@ const Root = React.forwardRef<HTMLDivElement, IToolbarRoot>(
             dir={direction}
             {...toolbarProps}
             ref={forwardedRef}
-            className={cn('flex flex-row gap-lg w-full')}
+            className={cn('kl-flex kl-flex-row kl-gap-lg kl-w-full')}
           />
         </RovingFocusGroup.Root>
       </ToolbarProvider>
     );
-  }
+  },
 );
 
 Root.displayName = TOOLBAR_NAME;
@@ -158,7 +158,7 @@ const ToolbarButton = React.forwardRef<ToolbarButtonElement, IButton>(
         <_Button {...buttonProps} ref={forwardedRef} />
       </RovingFocusGroup.Item>
     );
-  }
+  },
 );
 
 ToolbarButton.displayName = TOOLBAR_BUTTON_NAME;
@@ -178,7 +178,7 @@ const ToolbarIconButton = React.forwardRef<ToolbarButtonElement, IIconButton>(
         <_IconButton {...buttonProps} ref={forwardedRef} />
       </RovingFocusGroup.Item>
     );
-  }
+  },
 );
 
 ToolbarIconButton.displayName = TOOLBAR_ICON_BUTTON_NAME;
@@ -197,20 +197,20 @@ const ToolbarTextField = React.forwardRef<HTMLInputElement, ITextInput>(
         onFocus={(e) => {
           e.target?.parentElement?.classList?.add(
             'ring-2',
-            'ring-border-focus'
+            'ring-border-focus',
           );
         }}
         onBlur={(e) => {
           e.target?.parentElement?.classList?.remove(
             'ring-2',
-            'ring-border-focus'
+            'ring-border-focus',
           );
         }}
       >
         <_TextInput {...inputProps} ref={forwardedRef} />
       </RovingFocusGroup.Item>
     );
-  }
+  },
 );
 
 ToolbarTextField.displayName = TEXTFIELD_NAME;
@@ -235,7 +235,7 @@ const ToolbarLink = React.forwardRef<ToolbarLinkElement, ToolbarLinkProps>(
         />
       </RovingFocusGroup.Item>
     );
-  }
+  },
 );
 
 ToolbarLink.displayName = LINK_NAME;
@@ -281,7 +281,7 @@ const ToolbarButtonGroup = React.forwardRef<
       value={toggleGroupProps.value}
       ref={forwardedRef}
       rovingFocus={false}
-      className={cn('flex flex-row pulsable')}
+      className={cn('kl-flex kl-flex-row pulsable')}
       onValueChange={(e) => {
         if (props.onValueChange && e) props.onValueChange(e);
       }}
@@ -357,7 +357,9 @@ const ToolbarButtonGroupButton = React.forwardRef<
         <_Button
           {...props}
           noRounded
-          className={cn('-ml-xs first:rounded-l last:rounded-r first:ml-0')}
+          className={cn(
+            '-kl-ml-xs first:kl-rounded-l last:kl-rounded-r first:kl-ml-0',
+          )}
           variant="basic"
           {...extraProps}
           content={toggleItemProps.content}
@@ -400,7 +402,9 @@ const ToolbarButtonGroupIconButton = React.forwardRef<
           {...props}
           variant="basic"
           noRounded
-          className={cn('-ml-xs first:rounded-l last:rounded-r first:ml-0')}
+          className={cn(
+            '-kl-ml-xs first:kl-rounded-l last:kl-rounded-r first:kl-ml-0',
+          )}
           {...extraProps}
         />
       </ToggleGroupPrimitive.Item>

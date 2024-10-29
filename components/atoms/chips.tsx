@@ -59,9 +59,9 @@ const ChipBase = React.forwardRef<HTMLButtonElement, IChipBase>(
       label,
       disabled = false,
       compType = 'BASIC',
-      onRemove = (_) => { },
+      onRemove = (_) => {},
       prefix = null,
-      onClick = (_) => { },
+      onClick = (_) => {},
       Component,
       loading = false,
       ...mprops
@@ -80,35 +80,35 @@ const ChipBase = React.forwardRef<HTMLButtonElement, IChipBase>(
         {...extraProps}
         {...mprops}
         className={cn(
-          'rounded border bodySm-medium py-px flex items-center transition-all outline-none flex-row gap-md ring-offset-1 h-fit',
-          'focus-within:ring-2 focus-within:ring-border-focus',
-          'w-fit flex-shrink-0',
+          'kl-rounded kl-border kl-bodySm-medium kl-py-px kl-flex kl-items-center kl-transition-all kl-outline-none kl-flex-row kl-gap-md kl-ring-offset-1 kl-h-fit',
+          'focus-within:kl-ring-2 focus-within:kl-ring-border-focus',
+          'kl-w-fit kl-flex-shrink-0',
           {
-            'text-text-default': !disabled,
-            'text-text-disabled': disabled,
+            'kl-text-text-default': !disabled,
+            'kl-text-text-disabled': disabled,
           },
           {
-            'pointer-events-none': disabled,
+            'kl-pointer-events-none': disabled,
           },
           {
-            'border-border-default': !disabled,
-            'border-border-disabled': disabled,
+            'kl-border-border-default': !disabled,
+            'kl-border-border-disabled': disabled,
           },
           {
-            'bg-surface-basic-default': !disabled,
+            'kl-bg-surface-basic-default': !disabled,
           },
           {
-            'pr-md pl-lg py-md': compType === 'REMOVABLE',
-            'px-lg py-md': compType !== 'REMOVABLE',
+            'kl-pr-md kl-pl-lg kl-py-md': compType === 'REMOVABLE',
+            'kl-px-lg kl-py-md': compType !== 'REMOVABLE',
           },
           {
-            'pr-md pl-md py-sm': compType === 'SM',
+            'kl-pr-md kl-pl-md kl-py-sm': compType === 'SM',
             // 'px-lg py-md': compType !== 'SM',
           },
           {
-            'hover:bg-surface-basic-hovered active:bg-surface-basic-pressed focus-visible:ring-2 focus-visible:ring-border-focus':
+            'hover:kl-bg-surface-basic-hovered active:kl-bg-surface-basic-pressed focus-visible:kl-ring-2 focus-visible:kl-ring-border-focus':
               compType === 'CLICKABLE',
-          }
+          },
         )}
         onClick={() => {
           if (onClick) onClick(item);
@@ -118,7 +118,7 @@ const ChipBase = React.forwardRef<HTMLButtonElement, IChipBase>(
         {prefix &&
           !loading &&
           (typeof prefix === 'string' ? (
-            <span className="bodySm text-text-soft">{prefix}</span>
+            <span className={cn('kl-bodySm kl-text-text-soft')}>{prefix}</span>
           ) : (
             React.cloneElement(prefix, {
               size: 12,
@@ -126,15 +126,15 @@ const ChipBase = React.forwardRef<HTMLButtonElement, IChipBase>(
             })
           ))}
         {loading && (
-          <span className="animate-spin">
+          <span className={cn('kl-animate-spin')}>
             <Spinner size={12} color="currentColor" />
           </span>
         )}
         <span
           className={
             compType === 'SM'
-              ? 'flex items-center text-text-default'
-              : 'flex items-center'
+              ? 'kl-flex kl-items-center kl-text-text-default'
+              : 'kl-flex kl-items-center'
           }
         >
           {label}
@@ -158,10 +158,10 @@ const ChipBase = React.forwardRef<HTMLButtonElement, IChipBase>(
                 }
               }}
               className={cn(
-                'outline-none flex items-center rounded-sm ring-offset-0 justify-center hover:bg-surface-basic-hovered active:bg-surface-basic-pressed',
+                'kl-outline-none kl-flex kl-items-center kl-rounded-sm kl-ring-offset-0 kl-justify-center hover:kl-bg-surface-basic-hovered active:kl-bg-surface-basic-pressed',
                 {
-                  'cursor-default': disabled,
-                }
+                  'kl-cursor-default': disabled,
+                },
               )}
             >
               <XFill size={12} color="currentColor" />
@@ -170,7 +170,7 @@ const ChipBase = React.forwardRef<HTMLButtonElement, IChipBase>(
         )}
       </Component>
     );
-  }
+  },
 );
 
 export const Chip = forwardRef<HTMLButtonElement, IChip>(
@@ -187,7 +187,7 @@ export const Chip = forwardRef<HTMLButtonElement, IChip>(
       loading = false,
       ...props
     },
-    ref
+    ref,
   ) => {
     let Component: any = 'div';
     if (type === 'CLICKABLE') {
@@ -227,12 +227,12 @@ export const Chip = forwardRef<HTMLButtonElement, IChip>(
         {...props}
       />
     );
-  }
+  },
 );
 
 export const ChipGroup = ({
-  onClick = (_) => { },
-  onRemove = (_) => { },
+  onClick = (_) => {},
+  onRemove = (_) => {},
   children,
   className = '',
 }: IChipGroup) => {
@@ -249,13 +249,13 @@ export const ChipGroup = ({
     if (keyRemovable && length > 0) {
       if (lastRemovedIndex === length) {
         const buttonElement: HTMLButtonElement = ref.current?.children.item(
-          lastRemovedIndex - 1
+          lastRemovedIndex - 1,
         )?.lastChild as HTMLButtonElement;
 
         buttonElement.focus();
       } else {
         const buttonElement: HTMLButtonElement = ref.current?.children.item(
-          lastRemovedIndex
+          lastRemovedIndex,
         )?.lastChild as HTMLButtonElement;
 
         buttonElement.focus();
@@ -264,7 +264,7 @@ export const ChipGroup = ({
   }, [children]);
   return (
     <RovingFocusGroup.Root loop asChild>
-      <div className={cn('flex flex-row gap-lg', className)} ref={ref}>
+      <div className={cn('kl-flex kl-flex-row kl-gap-lg', className)} ref={ref}>
         {React.Children.map(children, (child, index) => {
           if (!child) {
             return null;
@@ -275,7 +275,7 @@ export const ChipGroup = ({
             isInGroup: true,
             onRemove: (
               e: any,
-              iskey: boolean | ((prevState: boolean) => boolean)
+              iskey: boolean | ((prevState: boolean) => boolean),
             ) => {
               setKeyRemovable(iskey);
               setLastRemovedIndex(index);

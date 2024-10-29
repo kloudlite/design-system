@@ -23,10 +23,10 @@ export const Content = ({
         style={{ pointerEvents: 'all' }}
         autoFocus
         forceMount
-        className="outline-none transform overflow-hidden rounded bg-surface-basic-default shadow-modal border border-border-default w-[300px] z-[999999999]"
+        className="kl-outline-none kl-transform kl-overflow-hidden kl-rounded kl-bg-surface-basic-default kl-shadow-modal kl-border kl-border-border-default kl-w-[300px] kl-z-[999999999]"
         sideOffset={5}
       >
-        <div className="p-3xl">{children}</div>
+        <div className="kl-p-3xl">{children}</div>
       </PopoverPrimitive.Content>
     </PopoverPrimitive.Portal>
   );
@@ -34,7 +34,9 @@ export const Content = ({
 
 export const Footer = ({ children }: ChildrenProps) => {
   return (
-    <div className="pt-3xl flex flex-row justify-end gap-lg">{children}</div>
+    <div className="kl-pt-3xl kl-flex kl-flex-row kl-justify-end kl-gap-lg">
+      {children}
+    </div>
   );
 };
 export const Button = (props: IButton) => {

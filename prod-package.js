@@ -1,10 +1,10 @@
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
-import p from './package.json' with { type: 'json' };
+import p from "./package.json" with { type: "json" };
 
 const {
-  externalDependencies,
+  peerDependencies,
   devDependencies,
   dependencies,
   version,
@@ -14,7 +14,7 @@ const {
   keywords,
 } = p;
 
-const startingDirectory = './dist/mjs'; // Change this to your desired starting directory
+const startingDirectory = "./dist/mjs"; // Change this to your desired starting directory
 
 function readDirectoryRecursively(directoryPath, p) {
   let result = {};
@@ -30,15 +30,15 @@ function readDirectoryRecursively(directoryPath, p) {
         ...result,
         ...readDirectoryRecursively(
           path.join(directoryPath, file),
-          `${p}/${file}`
+          `${p}/${file}`,
         ),
       };
     } else if (
       stats.isFile() &&
       stats.size > 0 &&
-      path.extname(file) === '.js'
+      path.extname(file) === ".js"
     ) {
-      const key = `${path.join(directoryPath, file.replace('.js', ''))}`;
+      const key = `${path.join(directoryPath, file.replace(".js", ""))}`;
       result[`./${key}`] = {
         import: `./mjs/${key}.js`,
         require: `./cjs/${key}.js`,
@@ -50,36 +50,36 @@ function readDirectoryRecursively(directoryPath, p) {
 }
 
 const getProdPackage = () => {
-  const jsonResult = readDirectoryRecursively('', '.');
+  const jsonResult = readDirectoryRecursively("", ".");
 
   const p = {
-    name: '@kloudlite/design-system',
+    name: "@kloudlite/design-system",
     private: false,
     version,
     description,
     license,
     author,
     keywords,
-    main: './cjs/index.js',
-    module: './mjs/index.js',
+    main: "./cjs/index.js",
+    module: "./mjs/index.js",
     exports: {
-      './index.css': {
-        import: './mjs/css/index.css',
-        require: './cjs/css/index.css',
+      "./index.css": {
+        import: "./mjs/css/index.css",
+        require: "./cjs/css/index.css",
       },
       ...jsonResult,
     },
-    files: ['./'],
-    types: '.',
+    files: ["./"],
+    types: ".",
     dependencies,
     devDependencies,
-    peerDependencies: externalDependencies,
+    peerDependencies,
   };
 
   return JSON.stringify(p, null, 2);
 };
 
-const outPath = './dist';
+const outPath = "./dist";
 const setup = () => {
   const packageJson = getProdPackage();
 
@@ -90,10 +90,10 @@ const setup = () => {
   try {
     fs.writeFileSync(`${outPath}/package.json`, packageJson);
   } catch (e) {
-    console.log('e', e);
+    console.log("e", e);
   }
 
-  console.log('Done!');
+  console.log("Done!");
 };
 
 setup();

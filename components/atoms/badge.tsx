@@ -19,20 +19,20 @@ export const Badge = ({
   return (
     <div
       className={cn(
-        'flex gap-md items-center py-md px-2xl w-fit rounded-full bodySm border select-none pulsable',
+        'kl-flex kl-gap-md kl-items-center kl-py-md kl-px-2xl kl-w-fit kl-rounded-full kl-bodySm kl-border kl-select-none kl-pulsable',
         {
-          'border-border-dark bg-surface-basic-subdued text-text-default':
+          'kl-border-border-dark kl-bg-surface-basic-subdued kl-text-text-default':
             type === 'neutral',
-          'border-border-primary bg-surface-primary-subdued text-text-primary':
+          'kl-border-border-primary kl-bg-surface-primary-subdued kl-text-text-primary':
             type === 'info',
-          'border-border-success bg-surface-success-subdued text-text-success ':
+          'kl-border-border-success kl-bg-surface-success-subdued kl-text-text-success':
             type === 'success',
-          'border-border-warning bg-surface-warning-subdued text-text-warning':
+          'kl-border-border-warning kl-bg-surface-warning-subdued kl-text-text-warning':
             type === 'warning',
-          'border-border-critical bg-surface-critical-subdued text-text-critical':
+          'kl-border-border-critical kl-bg-surface-critical-subdued kl-text-text-critical':
             type === 'critical',
         },
-        className
+        className,
       )}
     >
       {!!icon && cloneElement(icon, iconProps)}
