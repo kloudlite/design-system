@@ -1,18 +1,18 @@
-import { build } from "esbuild";
-import { sassPlugin } from "esbuild-sass-plugin";
-import p from "./package.json" with { type: "json" };
+import { build } from 'esbuild';
+import { sassPlugin } from 'esbuild-sass-plugin';
+import p from './package.json' with { type: 'json' };
 
 const { dependencies } = p;
 
 // const entryFile = 'components/*';
-const outPath = "./dist";
+const outPath = './dist';
 const shared = {
-  packages: "external",
+  packages: 'external',
   bundle: true,
-  entryPoints: ["components/*", "components/**/*"],
-  loader: { ".js": "jsx" },
+  entryPoints: ['components/*', 'components/**/*'],
+  loader: { '.js': 'jsx' },
   external: Object.keys(dependencies),
-  logLevel: "info",
+  logLevel: 'info',
   minify: false,
   sourcemap: false,
   plugins: [sassPlugin()],
@@ -20,14 +20,14 @@ const shared = {
 
 build({
   ...shared,
-  format: "esm",
+  format: 'esm',
   outdir: `${outPath}/mjs`,
-  target: ["esnext", "node20.6.0", "es2022"],
+  target: ['esnext', 'node20.6.0', 'es2022'],
 });
 
 build({
   ...shared,
-  format: "cjs",
+  format: 'cjs',
   outdir: `${outPath}/cjs`,
-  target: ["esnext", "node20.6.0", "es2022"],
+  target: ['esnext', 'node20.6.0', 'es2022'],
 });
