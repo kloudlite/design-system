@@ -14,12 +14,12 @@ const HeaderLink = (props: IHeaderLink) => {
     <Link
       to={to}
       className={classnames(
-        'flex transition-all hover:text-text-default font-medium headingSm items-center',
+        'kl-flex kl-transition-all hover:kl-text-text-default kl-font-medium kl-headingSm kl-items-center',
         {
-          'text-text-default': isActive,
-          'text-text-soft': !isActive,
+          'kl-text-text-default': isActive,
+          'kl-text-text-soft': !isActive,
         },
-        'px-1'
+        'kl-px-1',
       )}
     >
       {children}
@@ -29,11 +29,11 @@ const HeaderLink = (props: IHeaderLink) => {
 
 export const NavBar = () => {
   return (
-    <div className="flex flex-row justify-between p-4">
-      <Link className="p-1" to="/">
+    <div className="kl-flex kl-flex-row kl-justify-between kl-p-4">
+      <Link className="kl-p-1" to="/">
         Kloudlite Draft
       </Link>
-      <div className="flex gap-x-8">
+      <div className="kl-flex kl-gap-x-8">
         <HeaderLink to="/">Home</HeaderLink>
         <HeaderLink to="/features">Features</HeaderLink>
         <HeaderLink to="/pricing">Pricing</HeaderLink>

@@ -16,17 +16,19 @@ const Page500 = ({
   link,
 }: IPage404) => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen gap-8xl">
+    <div className="kl-flex kl-flex-col kl-items-center kl-justify-center kl-h-screen kl-gap-8xl">
       <div className="dark-hidden">
         <Error500Icon />
       </div>
-      <div className="hidden dark-block">
+      <div className="kl-hidden dark-block">
         <Error500IconDark />
       </div>
-      <div className="flex flex-col items-center justify-center gap-5xl max-w-md text-center">
-        <div className="flex flex-col gap-3xl">
-          <div className="text-text-default heading3xl">{heading}</div>
-          <div className="bodyMd text-text-soft md:w-[544px]">{content}</div>
+      <div className="kl-flex kl-flex-col kl-items-center kl-justify-center kl-gap-5xl kl-max-w-md kl-text-center">
+        <div className="kl-flex kl-flex-col kl-gap-3xl">
+          <div className="kl-text-text-default kl-heading3xl">{heading}</div>
+          <div className="kl-bodyMd kl-text-text-soft md:kl-w-[544px]">
+            {content}
+          </div>
         </div>
         <Button variant="basic" size="md" content="Go to homepage" to={link} />
       </div>

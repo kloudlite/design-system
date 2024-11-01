@@ -150,23 +150,23 @@ export const ButtonBase = React.forwardRef<
       tabIndex={tabIndex}
       target={target}
       className={cn(
-        'pulsable flex-nowrap',
+        'pulsable kl-flex-nowrap',
         {
-          'w-full': !!block,
-          'w-fit': !block,
+          'kl-w-full': !!block,
+          'kl-w-fit': !block,
           selected,
         },
         {
-          'pointer-events-none': loading,
+          'kl-pointer-events-none': loading,
         },
         {
-          'bodyMd-medium': !variant?.includes('plain'),
-          bodyMd: variant?.includes('plain'),
+          'kl-bodyMd-medium': !variant?.includes('plain'),
+          'kl-bodyMd': variant?.includes('plain'),
         },
         {
-          'pointer-events-none !text-text-disabled bg-surface-basic-disabled':
+          'kl-pointer-events-none !kl-text-text-disabled kl-bg-surface-basic-disabled':
             disabled,
-          '!border-border-disabled':
+          '!kl-border-border-disabled':
             disabled &&
             ![
               'plain',
@@ -175,45 +175,46 @@ export const ButtonBase = React.forwardRef<
               'secondary-plain',
             ].includes(variant),
         },
-        'relative ring-offset-1',
-        'outline-none',
-        'flex flex-row gap-lg items-center justify-center',
-        'disabled:text-text-disabled disabled:bg-surface-basic-disabled',
+        'kl-relative kl-ring-offset-1',
+        'kl-outline-none',
+        'kl-flex kl-flex-row kl-gap-lg kl-items-center kl-justify-center',
+        'disabled:kl-text-text-disabled disabled:kl-bg-surface-basic-disabled',
         {
           // noRing
-          'focus-visible:ring-2 focus:ring-border-focus focus:z-10': !noRing,
+          'focus-visible:kl-ring-2 focus:kl-ring-border-focus focus:kl-z-10':
+            !noRing,
         },
         {
           ...(!noRounded && {
-            'rounded-none': sharpLeft && sharpRight,
-            'rounded-r': sharpLeft && !sharpRight,
-            'rounded-l': !sharpLeft && sharpRight,
-            rounded: !sharpLeft && !sharpRight,
+            'kl-rounded-none': sharpLeft && sharpRight,
+            'kl-rounded-r': sharpLeft && !sharpRight,
+            'kl-rounded-l': !sharpLeft && sharpRight,
+            'kl-rounded': !sharpLeft && !sharpRight,
           }),
         },
-        'disabled:pointer-events-none',
+        'disabled:kl-pointer-events-none',
         {
-          'border-none': noBorder,
+          'kl-border-none': noBorder,
           ...(!noBorder && {
-            'border-border-default disabled:border-border-disabled':
+            'kl-border-border-default disabled:kl-border-border-disabled':
               variant === 'basic' ||
               variant === 'outline' ||
               variant === 'secondary-outline',
-            'border-border-primary disabled:border-border-disabled':
+            'kl-border-border-primary disabled:kl-border-border-disabled':
               variant === 'primary' || variant === 'primary-outline',
-            'border-border-secondary disabled:border-border-disabled':
+            'kl-border-border-secondary disabled:kl-border-border-disabled':
               variant === 'secondary',
-            'border-border-critical disabled:border-border-disabled':
+            'kl-border-border-critical disabled:kl-border-border-disabled':
               variant === 'critical-outline' || variant === 'critical',
-            'border-border-purple': variant === 'purple',
-            'border-border-warning': variant === 'warning',
-            'border-border-tertiary': variant === 'tertiary',
-            'border-none':
+            'kl-border-border-purple': variant === 'purple',
+            'kl-border-border-warning': variant === 'warning',
+            'kl-border-border-tertiary': variant === 'tertiary',
+            'kl-border-none':
               variant === 'plain' ||
               variant === 'primary-plain' ||
               variant === 'critical-plain' ||
               variant === 'secondary-plain',
-            border: !(
+            'kl-border': !(
               variant === 'plain' ||
               variant === 'primary-plain' ||
               variant === 'critical-plain' ||
@@ -223,68 +224,68 @@ export const ButtonBase = React.forwardRef<
         },
         !disabled
           ? {
-              'bg-surface-basic-default hover:bg-surface-basic-hovered active:bg-surface-basic-pressed disabled:bg-surface-basic-default':
+              'kl-bg-surface-basic-default hover:kl-bg-surface-basic-hovered active:kl-bg-surface-basic-pressed disabled:kl-bg-surface-basic-default':
                 variant === 'basic' && !selected,
-              'bg-surface-basic-pressed hover:bg-surface-basic-pressed active:bg-surface-basic-pressed disabled:bg-surface-basic-default':
+              'kl-bg-surface-basic-pressed hover:kl-bg-surface-basic-pressed active:kl-bg-surface-basic-pressed disabled:kl-bg-surface-basic-default':
                 variant === 'basic' && selected,
-              'bg-surface-primary-default hover:bg-surface-primary-hovered active:bg-surface-primary-pressed disabled:bg-surface-basic-default':
+              'kl-bg-surface-primary-default hover:kl-bg-surface-primary-hovered active:kl-bg-surface-primary-pressed disabled:kl-bg-surface-basic-default':
                 variant === 'primary',
-              'bg-surface-secondary-default hover:bg-surface-secondary-hovered active:bg-surface-secondary-pressed disabled:bg-surface-basic-default':
+              'kl-bg-surface-secondary-default hover:kl-bg-surface-secondary-hovered active:kl-bg-surface-secondary-pressed disabled:kl-bg-surface-basic-default':
                 variant === 'secondary',
-              'bg-surface-critical-default hover:bg-surface-critical-hovered active:bg-surface-critical-pressed disabled:bg-surface-basic-default':
+              'kl-bg-surface-critical-default hover:kl-bg-surface-critical-hovered active:kl-bg-surface-critical-pressed disabled:kl-bg-surface-basic-default':
                 variant === 'critical',
-              'bg-none hover:bg-surface-critical-subdued active:bg-surface-critical-subdued':
+              'kl-bg-none hover:kl-bg-surface-critical-subdued active:kl-bg-surface-critical-subdued':
                 variant === 'critical-outline',
-              'bg-none hover:bg-surface-primary-subdued active:bg-surface-primary-subdued':
+              'kl-bg-none hover:kl-bg-surface-primary-subdued active:kl-bg-surface-primary-subdued':
                 variant === 'primary-outline',
-              'bg-none hover:bg-surface-secondary-subdued active:bg-surface-secondary-subdued':
+              'kl-bg-none hover:kl-bg-surface-secondary-subdued active:kl-bg-surface-secondary-subdued':
                 variant === 'secondary-outline',
-              'bg-none hover:bg-surface-basic-hovered active:bg-surface-basic-pressed ':
+              'kl-bg-none hover:kl-bg-surface-basic-hovered active:kl-bg-surface-basic-pressed':
                 variant === 'outline',
-              'bg-surface-basic-pressed shadow-none hover:bg-surface-basic-hovered active:bg-surface-basic-pressed hover:shadow-button':
+              'kl-bg-surface-basic-pressed kl-shadow-none hover:kl-bg-surface-basic-hovered active:kl-bg-surface-basic-pressed hover:kl-shadow-button':
                 variant === 'outline' && selected,
-              'bg-none shadow-none':
+              'kl-bg-none kl-shadow-none':
                 (variant === 'plain' ||
                   variant === 'primary-plain' ||
                   variant === 'secondary-plain' ||
                   variant === 'critical-plain') &&
                 !iconOnly,
-              'shadow-none active:shadow-button bg-surface-basic-pressed':
+              'kl-shadow-none active:kl-shadow-button kl-bg-surface-basic-pressed':
                 variant === 'plain' && !iconOnly && selected,
-              'bg-none shadow-none hover:bg-surface-basic-hovered active:bg-surface-basic-pressed active:shadow-button active:shadow-button':
+              'kl-bg-none kl-shadow-none hover:kl-bg-surface-basic-hovered active:kl-bg-surface-basic-pressed active:kl-shadow-button active:kl-shadow-button':
                 variant === 'plain' && iconOnly,
-              'bg-surface-basic-pressed shadow-none hover:bg-surface-basic-hovered active:bg-surface-basic-pressed active:shadow-button':
+              'kl-bg-surface-basic-pressed kl-shadow-none hover:kl-bg-surface-basic-hovered active:kl-bg-surface-basic-pressed active:kl-shadow-button':
                 variant === 'plain' && iconOnly && selected,
-              'bg-surface-purple-default hover:bg-surface-purple-hovered active:bg-surface-purple-pressed':
+              'kl-bg-surface-purple-default hover:kl-bg-surface-purple-hovered active:kl-bg-surface-purple-pressed':
                 variant === 'purple',
-              'bg-surface-tertiary-default hover:bg-surface-tertiary-hovered active:bg-surface-tertiary-pressed':
+              'kl-bg-surface-tertiary-default hover:kl-bg-surface-tertiary-hovered active:kl-bg-surface-tertiary-pressed':
                 variant === 'tertiary',
-              'bg-surface-warning-default hover:bg-surface-warning-hovered active:bg-surface-warning-pressed':
+              'kl-bg-surface-warning-default hover:kl-bg-surface-warning-hovered active:kl-bg-surface-warning-pressed':
                 variant === 'warning',
             }
           : {},
         {
-          'text-text-default':
+          'kl-text-text-default':
             variant === 'basic' || variant === 'plain' || variant === 'outline',
-          'text-text-on-primary':
+          'kl-text-text-on-primary':
             variant === 'primary' ||
             variant === 'critical' ||
             variant === 'secondary' ||
             variant === 'secondary-outline' ||
             variant === 'purple' ||
             variant === 'warning',
-          'text-text-critical':
+          'kl-text-text-critical':
             variant === 'critical-outline' || variant === 'critical-plain',
-          'text-text-primary':
+          'kl-text-text-primary':
             variant === 'primary-outline' || variant === 'primary-plain',
-          'text-text-secondary': variant === 'secondary-plain',
-          'text-text-on-secondary': variant === 'tertiary',
+          'kl-text-text-secondary': variant === 'secondary-plain',
+          'kl-text-text-on-secondary': variant === 'tertiary',
         },
         {
-          'focus:underline': noRing,
+          'focus:kl-underline': noRing,
         },
         {
-          'hover:underline':
+          'hover:kl-underline':
             variant === 'plain' ||
             variant === 'primary-plain' ||
             variant === 'critical-plain' ||
@@ -299,11 +300,11 @@ export const ButtonBase = React.forwardRef<
               variant === 'critical-plain' ||
               variant === 'secondary-plain'
             ) && {
-              'py-md px-lg': size === 'sm',
-              'py-lg px-2xl': size === 'md',
-              'py-xl px-4xl': size === 'lg',
-              'py-2xl px-6xl': size === 'xl',
-              'py-2xl px-9xl': size === '2xl',
+              'kl-py-md kl-px-lg': size === 'sm',
+              'kl-py-lg kl-px-2xl': size === 'md',
+              'kl-py-xl kl-px-4xl': size === 'lg',
+              'kl-py-2xl kl-px-6xl': size === 'xl',
+              'kl-py-2xl kl-px-9xl': size === '2xl',
             }),
         },
         {
@@ -312,16 +313,16 @@ export const ButtonBase = React.forwardRef<
               variant === 'primary-plain' ||
               variant === 'critical-plain' ||
               variant === 'secondary-plain') && {
-              'px-md py-sm': size === 'sm',
-              'py-sm px-md': size === 'md',
-              'py-md px-lg': size === 'lg',
+              'kl-px-md kl-py-sm': size === 'sm',
+              'kl-py-sm kl-px-md': size === 'md',
+              'kl-py-md kl-px-lg': size === 'lg',
             }),
         },
         {
-          'p-lg !h-[36px] !w-[36px]':
+          'kl-p-lg !kl-h-[36px] !kl-w-[36px]':
             iconOnly && (size === 'md' || size === 'lg'),
-          'p-md': iconOnly && size === 'sm',
-          'p-sm': iconOnly && size === 'xs',
+          'kl-p-md': iconOnly && size === 'sm',
+          'kl-p-sm': iconOnly && size === 'xs',
         },
         className,
       )}
@@ -332,9 +333,11 @@ export const ButtonBase = React.forwardRef<
             initial={{ width: 0 }}
             animate={{ width: 'auto', paddingRight: 0 }}
             exit={{ width: 0 }}
-            className="flex items-center justify-center aspect-square overflow-hidden"
+            className={cn(
+              'kl-flex kl-items-center kl-justify-center kl-aspect-square kl-overflow-hidden',
+            )}
           >
-            <span className="animate-spin">
+            <span className={cn('kl-animate-spin')}>
               <Spinner color="currentColor" weight={2} size={18} />
             </span>
           </motion.span>
@@ -345,7 +348,9 @@ export const ButtonBase = React.forwardRef<
           size: iconSize || (iconOnly && size === 'lg' ? 20 : 16),
           color: 'currentColor',
         })}
-      {!iconOnly && <span className="block truncate">{content}</span>}
+      {!iconOnly && (
+        <span className={cn('kl-block kl-truncate')}>{content}</span>
+      )}
       {!!suffix &&
         React.cloneElement(suffix, {
           size: iconSize || 16,

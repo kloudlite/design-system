@@ -61,21 +61,21 @@ export const TopBar = ({
       <div
         ref={headingRef}
         className={cn(
-          'bg-surface-basic-default z-40 transition-all overflow-hidden',
+          'kl-bg-surface-basic-default kl-z-40 kl-transition-all kl-overflow-hidden',
           {
-            'sticky -top-xs left-0 right-0': !tabs && fixed,
-            'shadow-sm pt-xs ': !tabs && fixed && isHeadingSticked,
-          }
+            'kl-sticky -kl-top-xs kl-left-0 kl-right-0': !tabs && fixed,
+            'kl-shadow-sm kl-pt-xs': !tabs && fixed && isHeadingSticked,
+          },
         )}
       >
         <Container>
-          <div className="flex flex-row items-center gap-3xl py-xl">
-            <div className="flex flex-row gap-md items-center">
+          <div className="kl-flex kl-flex-row kl-items-center kl-gap-3xl kl-py-xl">
+            <div className="kl-flex kl-flex-row kl-gap-md kl-items-center">
               {!!logo && logo}
               {!!breadcrum && breadcrum}
             </div>
-            <div className="flex flex-row items-center justify-end flex-1">
-              <div className="flex flex-row items-center justify-center">
+            <div className="kl-flex kl-flex-row kl-items-center kl-justify-end kl-flex-1">
+              <div className="kl-flex kl-flex-row kl-items-center kl-justify-center">
                 {!!actions && actions}
               </div>
             </div>
@@ -86,22 +86,25 @@ export const TopBar = ({
       <TopBarContext.Provider
         value={useMemo(
           () => ({ isSticked: isTabBarSticked && fixed }),
-          [isTabBarSticked]
+          [isTabBarSticked],
         )}
       >
         {!!tabs && (
           <div
             ref={tabBarRef}
-            className={cn('bg-surface-basic-default z-40 min-h-[40px]', {
-              'sticky -top-xs pt-xs left-0 right-0': fixed,
-              'shadow-sm': fixed && isTabBarSticked,
-            })}
+            className={cn(
+              'kl-bg-surface-basic-default kl-z-40 kl-min-h-[40px]',
+              {
+                'kl-sticky -kl-top-xs kl-pt-xs kl-left-0 kl-right-0': fixed,
+                'kl-shadow-sm': fixed && isTabBarSticked,
+              },
+            )}
           >
             <Container>{tabs}</Container>
           </div>
         )}
       </TopBarContext.Provider>
-      <div className="border-b border-border-default" />
+      <div className="kl-border-b kl-border-border-default" />
     </>
   );
 };

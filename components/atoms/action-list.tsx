@@ -52,43 +52,49 @@ export const Item = ({
   }
 
   return (
-    <div className={cn('w-full flex flex-row gap-x-md')}>
+    <div className={cn('kl-w-full kl-flex kl-flex-row kl-gap-x-md')}>
       {active && showIndicator && (
-        <motion.div layoutId="line" className="w-sm bg-icon-primary rounded" />
+        <motion.div
+          layoutId="line"
+          className="kl-w-sm kl-bg-icon-primary kl-rounded"
+        />
       )}
       {!active && showIndicator && (
-        <motion.div layoutId="line_1" className="w-sm bg-transparent rounded" />
+        <motion.div
+          layoutId="line_1"
+          className="kl-w-sm kl-bg-transparent kl-rounded"
+        />
       )}
       <Component
         {...(Component === 'a' ? { href: to } : { to })}
         className={cn(
-          'transition-all w-[inherit] rounded border flex gap-lg items-center justify-between cursor-pointer outline-none border-none py-lg ring-offset-1 focus-visible:ring-2 focus:ring-border-focus',
+          'kl-transition-all kl-w-[inherit] kl-rounded kl-border kl-flex kl-gap-lg kl-items-center kl-justify-between kl-cursor-pointer kl-outline-none kl-border-none kl-py-lg kl-ring-offset-1 focus-visible:kl-ring-2 focus:kl-ring-border-focus',
           {
-            'px-2xl': showIndicator,
-            'text-text-soft hover:text-text-default':
+            'kl-px-2xl': showIndicator,
+            'kl-text-text-soft hover:kl-text-text-default':
               !active && !disabled && !critical && showIndicator,
-            'text-text-primary bodyMd-medium': active && showIndicator,
+            'kl-text-text-primary kl-bodyMd-medium': active && showIndicator,
             bodyMd: !active || !showIndicator,
-            'text-text-default px-xl': !showIndicator,
-            'text-text-disabled': disabled,
-            'text-text-critical hover:text-text-on-primary active:text-text-on-primary':
+            'kl-text-text-default kl-px-xl': !showIndicator,
+            'kl-text-text-disabled': disabled,
+            'kl-text-text-critical hover:kl-text-text-on-primary active:kl-text-text-on-primary':
               critical,
           },
           {
-            'pointer-events-none': disabled,
+            'kl-pointer-events-none': disabled,
           },
           {
-            'bg-none hover:bg-surface-basic-hovered active:bg-surface-basic-pressed':
+            'kl-bg-none hover:kl-bg-surface-basic-hovered active:kl-bg-surface-basic-pressed':
               !active && !disabled && !critical,
-            'bg-none hover:bg-surface-critical-hovered active:bg-surface-critical-pressed':
+            'kl-bg-none hover:kl-bg-surface-critical-hovered active:kl-bg-surface-critical-pressed':
               !active && !disabled && critical,
-            'bg-none': disabled,
-            'bg-surface-basic-active': !critical && active,
+            'kl-bg-none': disabled,
+            'kl-bg-surface-basic-active': !critical && active,
           }
         )}
         onClick={!critical ? onClick : null}
       >
-        <div className="flex flex-row items-center gap-lg">
+        <div className="kl-flex kl-flex-row kl-items-center kl-gap-lg">
           {!!prefix &&
             React.cloneElement(prefix, { size: 16, color: 'currentColor' })}
           {children}
@@ -138,7 +144,7 @@ export const Root = ({
   id = useMemo(() => id, [props]);
 
   return (
-    <div className={cn('flex flex-col gap-y-md', className)}>
+    <div className={cn('kl-flex kl-flex-col kl-gap-y-md', className)}>
       <LayoutGroup id={id}>
         {React.Children.map(children as ReactElement[], (child) => (
           <Item

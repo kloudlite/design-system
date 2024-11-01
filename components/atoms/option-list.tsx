@@ -1,5 +1,5 @@
 import * as MenuPrimitive from '@radix-ui/react-menu';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React, {
   Children,
   ReactElement,
@@ -145,7 +145,7 @@ const OptionMenuContent = forwardRef<
       >
         <div
           className={cn(
-            'z-50 border border-border-default shadow-popover bg-surface-basic-default rounded min-w-[160px] overflow-hidden origin-top py-lg will-change-[opacity,transform] data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade',
+            'kl-z-50 kl-border kl-border-border-default kl-shadow-popover kl-bg-surface-basic-default kl-rounded kl-min-w-[160px] kl-overflow-hidden kl-origin-top kl-py-lg kl-will-change-[opacity,transform] data-[side=bottom]:kl-animate-slideUpAndFade data-[side=left]:kl-animate-slideRightAndFade data-[side=right]:kl-animate-slideLeftAndFade data-[side=top]:kl-animate-slideDownAndFade',
             className,
           )}
         >
@@ -175,9 +175,9 @@ const OptionItemRaw = forwardRef(
         // @ts-ignore
         ref={ref}
         className={cn(
-          'group relative flex flex-row gap-xl items-center bodyMd gap cursor-pointer select-none py-lg px-xl text-text-default outline-none transition-colors focus:bg-surface-basic-hovered hover:bg-surface-basic-hovered data-[disabled]:pointer-events-none data-[disabled]:text-text-disabled',
+          'kl-group kl-relative kl-flex kl-flex-row kl-gap-xl kl-items-center kl-bodyMd kl-gap kl-cursor-pointer kl-select-none kl-py-lg kl-px-xl kl-text-text-default kl-outline-none kl-transition-colors focus:kl-bg-surface-basic-hovered hover:kl-bg-surface-basic-hovered data-[disabled]:kl-pointer-events-none data-[disabled]:kl-text-text-disabled',
           {
-            'bg-surface-basic-active': !!active,
+            'kl-bg-surface-basic-active': !!active,
           },
           className,
         )}
@@ -199,9 +199,9 @@ const OptionMenuItem = forwardRef<HTMLDivElement, IOptionMenuItem>(
       >
         <div
           className={cn(
-            'group relative flex flex-row gap-xl items-center bodyMd gap cursor-pointer select-none py-lg px-xl text-text-default outline-none transition-colors focus:bg-surface-basic-hovered hover:bg-surface-basic-hovered data-[disabled]:pointer-events-none data-[disabled]:text-text-disabled',
+            'kl-group kl-relative kl-flex kl-flex-row kl-gap-xl kl-items-center kl-bodyMd kl-gap kl-cursor-pointer kl-select-none kl-py-lg kl-px-xl kl-text-text-default kl-outline-none kl-transition-colors focus:kl-bg-surface-basic-hovered hover:kl-bg-surface-basic-hovered data-[disabled]:kl-pointer-events-none data-[disabled]:kl-text-text-disabled',
             {
-              'bg-surface-basic-active': !!props.active,
+              'kl-bg-surface-basic-active': !!props.active,
             },
             className,
           )}
@@ -243,7 +243,7 @@ const OptionMenuLink = forwardRef<HTMLDivElement, IOptionMenuLink>(
       <OptionMenuPrimitive.Item
         ref={ref}
         className={cn(
-          'group relative flex flex-row gap-xl items-center bodyMd gap cursor-pointer select-none py-lg px-xl text-text-default outline-none transition-colors focus:bg-surface-basic-hovered hover:bg-surface-basic-hovered data-[disabled]:pointer-events-none data-[disabled]:text-text-disabled',
+          'kl-group kl-relative kl-flex kl-flex-row kl-gap-xl kl-items-center kl-bodyMd kl-gap kl-cursor-pointer kl-select-none kl-py-lg kl-px-xl kl-text-text-default kl-outline-none kl-transition-colors focus:kl-bg-surface-basic-hovered hover:kl-bg-surface-basic-hovered data-[disabled]:kl-pointer-events-none data-[disabled]:kl-text-text-disabled',
           className,
         )}
         // {...preventDefaultEvents}
@@ -277,7 +277,7 @@ const OptionMenuTextInputItem = forwardRef<
   return (
     <div
       className={cn({
-        'py-lg px-xl': !compact,
+        'kl-py-lg kl-px-xl': !compact,
       })}
     >
       <OptionMenuPrimitive.Item
@@ -304,15 +304,15 @@ const OptionMenuTextInputItem = forwardRef<
           onFocus={(event) => {
             if (props.focusRing) {
               event.target?.parentElement?.classList?.add(
-                'ring-2',
-                'ring-border-focus',
+                'kl-ring-2',
+                'kl-ring-border-focus',
               );
             }
           }}
           onBlur={(e) => {
             e.target?.parentElement?.classList?.remove(
-              'ring-2',
-              'ring-border-focus',
+              'kl-ring-2',
+              'kl-ring-border-focus',
             );
           }}
           onKeyDown={(e) => {
@@ -340,9 +340,9 @@ const OptionMenuCheckboxItem = forwardRef<HTMLDivElement, IOptionMenuCheckbox>(
     <OptionMenuPrimitive.CheckboxItem
       ref={ref}
       className={cn(
-        'group relative flex flex-row gap-xl items-center bodyMd gap cursor-pointer select-none py-lg px-xl text-text-default outline-none transition-colors focus:bg-surface-basic-hovered hover:bg-surface-basic-hovered data-[disabled]:pointer-events-none data-[disabled]:text-text-disabled',
+        'kl-group kl-relative kl-flex kl-flex-row kl-gap-xl kl-items-center kl-bodyMd kl-gap kl-cursor-pointer kl-select-none kl-py-lg kl-px-xl kl-text-text-default kl-outline-none kl-transition-colors focus:kl-bg-surface-basic-hovered hover:kl-bg-surface-basic-hovered data-[disabled]:kl-pointer-events-none data-[disabled]:kl-text-text-disabled',
         {
-          'data-[state=checked]:bg-surface-primary-subdued data-[state=checked]:text-text-primary data-[state=checked]:text-text-darktheme-primary':
+          'data-[state=checked]:kl-bg-surface-primary-subdued data-[state=checked]:kl-text-text-primary data-[state=checked]:kl-text-text-darktheme-primary':
             !showIndicator,
         },
         className,
@@ -353,7 +353,7 @@ const OptionMenuCheckboxItem = forwardRef<HTMLDivElement, IOptionMenuCheckbox>(
       onSelect={props.onClick}
     >
       {showIndicator && (
-        <span className="w-2xl h-2xl rounded border transition-all flex items-center justify-center border-border-default group-data-[state=checked]:border-border-primary group-data-[state=checked]:bg-surface-primary-default group-data-[disabled]:border-border-disabled group-data-[disabled]:bg-surface-basic-default">
+        <span className="kl-w-2xl kl-h-2xl kl-rounded kl-border kl-transition-all kl-flex kl-items-center kl-justify-center kl-border-border-default group-data-[state=checked]:kl-border-border-primary group-data-[state=checked]:kl-bg-surface-primary-default group-data-[disabled]:kl-border-border-disabled group-data-[disabled]:kl-bg-surface-basic-default">
           <OptionMenuPrimitive.ItemIndicator>
             <svg
               width="14"
@@ -367,7 +367,7 @@ const OptionMenuCheckboxItem = forwardRef<HTMLDivElement, IOptionMenuCheckbox>(
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 className={cn(
-                  'stroke-text-on-primary group-data-[disabled]:stroke-text-disabled',
+                  'kl-stroke-text-on-primary group-data-[disabled]:kl-stroke-text-disabled',
                 )}
               />
             </svg>
@@ -386,9 +386,9 @@ const OptionMenuRadioItem = forwardRef<HTMLDivElement, IOptionMenuRadio>(
     <OptionMenuPrimitive.RadioItem
       ref={ref}
       className={cn(
-        'group relative flex flex-row gap-xl items-center bodyMd gap cursor-pointer select-none py-lg px-xl text-text-default outline-none transition-colors focus:bg-surface-basic-hovered hover:bg-surface-basic-hovered data-[disabled]:pointer-events-none data-[disabled]:text-text-disabled',
+        'kl-group kl-relative kl-flex kl-flex-row kl-gap-xl kl-items-center kl-bodyMd kl-gap kl-cursor-pointer kl-select-none kl-py-lg kl-px-xl kl-text-text-default kl-outline-none kl-transition-colors focus:kl-bg-surface-basic-hovered hover:kl-bg-surface-basic-hovered data-[disabled]:kl-pointer-events-none data-[disabled]:kl-text-text-disabled',
         {
-          'data-[state=checked]:bg-surface-primary-subdued data-[state=checked]:text-text-primary':
+          'data-[state=checked]:kl-bg-surface-primary-subdued data-[state=checked]:kl-text-text-primary':
             !showIndicator,
         },
         className,
@@ -400,13 +400,13 @@ const OptionMenuRadioItem = forwardRef<HTMLDivElement, IOptionMenuRadio>(
       {showIndicator && (
         <span
           className={cn(
-            'w-2xl h-2xl rounded-full border transition-all flex items-center justify-center border-border-default group-data-[state=checked]:border-border-primary group-data-[disabled]:border-border-disabled',
+            'kl-w-2xl kl-h-2xl kl-rounded-full kl-border kl-transition-all kl-flex kl-items-center kl-justify-center kl-border-border-default group-data-[state=checked]:kl-border-border-primary group-data-[disabled]:kl-border-border-disabled',
           )}
         >
           <OptionMenuPrimitive.ItemIndicator>
             <div
               className={cn(
-                'block w-lg h-lg rounded-full bg-surface-primary-default group-data-[disabled]:bg-icon-disabled group-data-[disabled]:bg-icon-darktheme-disabled',
+                'kl-block kl-w-lg kl-h-lg kl-rounded-full kl-bg-surface-primary-default group-data-[disabled]:kl-bg-icon-disabled group-data-[disabled]:kl-bg-icon-darktheme-disabled',
               )}
             />
           </OptionMenuPrimitive.ItemIndicator>
@@ -422,7 +422,7 @@ const OptionMenuSeparator = forwardRef<HTMLDivElement, IOptionMenuSeparator>(
   ({ className, ...props }, ref) => (
     <OptionMenuPrimitive.Separator
       ref={ref}
-      className={cn('h-xs bg-border-disabled my-md', className)}
+      className={cn('kl-h-xs kl-bg-border-disabled kl-my-md', className)}
       {...props}
     />
   ),
@@ -516,7 +516,7 @@ const OptionMenuTabs = forwardRef<HTMLDivElement, IOptionMenuTabs>(
     return (
       <div
         className={cn({
-          'py-lg px-xl': !compact,
+          'kl-py-lg kl-px-xl': !compact,
         })}
         ref={tabRef}
         onFocus={(e) => {

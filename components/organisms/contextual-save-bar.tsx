@@ -24,18 +24,18 @@ export const ContextualSaveBar = ({
   return (
     <div
       className={classNames(
-        'transition-all bg-surface-secondary-pressed py-xl',
+        'kl-transition-all kl-bg-surface-secondary-pressed kl-py-xl',
         {
-          'sticky top-0 left-0 right-0 z-40': fixed,
-        }
+          'kl-sticky kl-top-0 kl-left-0 kl-right-0 kl-z-40': fixed,
+        },
       )}
     >
       <Container>
-        <div className="flex flex-row items-center justify-between gap-lg md:gap-0">
+        <div className="kl-flex kl-flex-row kl-items-center kl-justify-between kl-gap-lg md:kl-gap-0">
           {logo && (
             <Link
               to="/"
-              className="hidden md:block lg:block xl:block"
+              className="kl-hidden md:kl-block lg:kl-block xl:kl-block"
               // width={logoWidth}
               style={{ width: `${logoWidth}px` }}
             >
@@ -43,18 +43,18 @@ export const ContextualSaveBar = ({
             </Link>
           )}
           {message && (
-            <div className="headingMd text-text-on-primary font-sans-serif truncate">
+            <div className="kl-headingMd kl-text-text-on-primary kl-font-sans-serif kl-truncate">
               {message}
             </div>
           )}
           {logo && (
             <>
-              <div className="hidden md:block" />
-              <div className="hidden md:block" />
-              <div className="hidden md:block" />
+              <div className="kl-hidden md:kl-block" />
+              <div className="kl-hidden md:kl-block" />
+              <div className="kl-hidden md:kl-block" />
             </>
           )}
-          <div className="gap-x-lg flex flex-row items-center">
+          <div className="kl-gap-x-lg kl-flex kl-flex-row kl-items-center">
             {discardAction && (
               <Button
                 content="Discard"

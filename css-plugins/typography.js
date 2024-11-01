@@ -3,118 +3,121 @@ function typography() {
   return ({ addComponents }) => {
     addComponents({
       '.bodyXs': {
-        '@apply text-xxs leading-xxs font-sans font-normal': {},
+        '@apply kl-text-xxs kl-leading-xxs kl-font-sans kl-font-normal': {},
       },
       '.bodyMono': {
-        '@apply text-sm leading-sm font-mono': {},
+        '@apply kl-text-sm kl-leading-sm kl-font-mono': {},
       },
       '.bodyMono-medium': {
-        '@apply bodyMono !font-medium': {},
+        '@apply kl-bodyMono !kl-font-medium': {},
       },
       '.bodySm': {
-        '@apply text-xs leading-xs font-sans font-normal': {},
+        '@apply kl-text-xs kl-leading-xs kl-font-sans kl-font-normal': {},
       },
       '.bodySm-medium': {
-        '@apply bodySm !font-medium': {},
+        '@apply kl-bodySm !kl-font-medium': {},
       },
       '.bodySm-semibold': {
-        '@apply bodySm !font-semibold': {},
+        '@apply kl-bodySm !kl-font-semibold': {},
       },
       '.bodyMd': {
-        '@apply text-sm leading-sm font-sans': {},
+        '@apply kl-text-sm kl-leading-sm kl-font-sans': {},
       },
       '.bodyMd-medium': {
-        '@apply bodyMd !font-medium': {},
+        '@apply kl-bodyMd !kl-font-medium': {},
       },
       '.bodyMd-semibold': {
-        '@apply bodyMd !font-semibold': {},
+        '@apply kl-bodyMd !kl-font-semibold': {},
       },
       '.bodyMd-underline': {
-        '@apply bodyMd underline': {},
+        '@apply kl-bodyMd kl-underline': {},
       },
       '.bodyLg': {
-        '@apply text-md leading-md font-sans': {},
+        '@apply kl-text-md kl-leading-md kl-font-sans': {},
       },
       '.bodyLg-medium': {
-        '@apply bodyLg !font-medium': {},
+        '@apply kl-bodyLg !kl-font-medium': {},
       },
       '.bodyLg-semibold': {
-        '@apply bodyLg !font-semibold': {},
+        '@apply kl-bodyLg !kl-font-semibold': {},
       },
       '.bodyLg-underline': {
-        '@apply bodyLg underline': {},
+        '@apply kl-bodyLg kl-underline': {},
       },
       '.bodyXl': {
-        '@apply font-normal font-sans text-lg leading-lg': {},
+        '@apply kl-font-normal kl-font-sans kl-text-lg kl-leading-lg': {},
       },
       '.bodyXXl': {
-        '@apply font-normal font-sans text-xl leading-bodyXXl-lineHeight': {},
+        '@apply kl-font-normal kl-font-sans kl-text-xl kl-leading-bodyXXl-lineHeight':
+          {},
       },
       '.bodyXl-medium': {
-        '@apply font-medium font-sans text-lg leading-lg': {},
+        '@apply kl-font-medium kl-font-sans kl-text-lg kl-leading-lg': {},
       },
       '.headingXs': {
-        '@apply font-semibold text-xs leading-xs font-sans': {},
+        '@apply kl-font-semibold kl-text-xs kl-leading-xs kl-font-sans': {},
       },
       '.headingSm': {
-        '@apply font-semibold text-sm leading-sm font-sans': {},
+        '@apply kl-font-semibold kl-text-sm kl-leading-sm kl-font-sans': {},
       },
       '.headingMd': {
-        '@apply font-semibold text-md leading-md font-sans': {},
+        '@apply kl-font-semibold kl-text-md kl-leading-md kl-font-sans': {},
       },
       '.headingMd-marketing': {
-        '@apply headingMd !font-familjen': {},
+        '@apply kl-headingMd !kl-font-familjen': {},
       },
       '.headingLg': {
-        '@apply font-semibold text-lg leading-md font-sans': {},
+        '@apply kl-font-semibold kl-text-lg kl-leading-md kl-font-sans': {},
       },
       '.headingLg-marketing': {
-        '@apply headingLg !font-familjen': {},
+        '@apply kl-headingLg !kl-font-familjen': {},
       },
       '.headingXl': {
-        '@apply font-semibold text-xl leading-lg font-sans': {},
+        '@apply kl-font-semibold kl-text-xl kl-leading-lg kl-font-sans': {},
       },
       '.headingXl-marketing': {
-        '@apply headingXl !font-familjen': {},
+        '@apply kl-headingXl !kl-font-familjen': {},
       },
       '.heading2xl': {
-        '@apply font-semibold text-2xl leading-xl font-sans': {},
+        '@apply kl-font-semibold kl-text-2xl kl-leading-xl kl-font-sans': {},
       },
       '.heading2xl-marketing': {
-        '@apply heading2xl font-familjen': {},
+        '@apply kl-heading2xl kl-font-familjen': {},
       },
       '.heading3xl': {
-        '@apply font-semibold text-3xl leading-2xl font-sans': {},
+        '@apply kl-font-semibold kl-text-3xl kl-leading-2xl kl-font-sans': {},
       },
       '.heading3xl-marketing': {
-        '@apply heading3xl !font-familjen': {},
+        '@apply kl-heading3xl !kl-font-familjen': {},
       },
       '.heading3xl-1-marketing': {
-        '@apply heading3xl !font-sriracha': {},
+        '@apply kl-heading3xl !kl-font-sriracha': {},
       },
       '.heading4xl': {
-        '@apply font-bold text-4xl leading-3xl font-sans': {},
+        '@apply kl-font-bold kl-text-4xl kl-leading-3xl kl-font-sans': {},
       },
       '.heading4xl-marketing': {
-        '@apply heading4xl !font-familjen': {},
+        '@apply kl-heading4xl !kl-font-familjen': {},
       },
       '.heading5xl-marketing': {
-        '@apply font-bold text-5xl leading-5xl font-familjen': {},
+        '@apply kl-font-bold kl-text-5xl kl-leading-5xl kl-font-familjen': {},
       },
       '.heading5xl-1-marketing': {
-        '@apply font-normal text-5xl leading-5xl font-sriracha': {},
+        '@apply kl-font-normal kl-text-5xl kl-leading-5xl kl-font-sriracha': {},
       },
       '.heading6xl-marketing': {
-        '@apply font-bold text-6xl leading-6xl font-familjen': {},
+        '@apply kl-font-bold kl-text-6xl kl-leading-6xl kl-font-familjen': {},
       },
       '.sriracha5xl': {
-        '@apply font-normal text-5xl leading-4xl font-sriracha': {},
+        '@apply kl-font-normal kl-text-5xl kl-leading-4xl kl-font-sriracha': {},
       },
       '.sriracha4xl': {
-        '@apply font-normal text-4xl leading-2xl-1 font-sriracha': {},
+        '@apply kl-font-normal kl-text-4xl kl-leading-2xl-1 kl-font-sriracha':
+          {},
       },
       '.sriracha3xl': {
-        '@apply font-normal text-3xl leading-xl-1 font-sriracha': {},
+        '@apply kl-font-normal kl-text-3xl kl-leading-xl-1 kl-font-sriracha':
+          {},
       },
     });
   };

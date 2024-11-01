@@ -15,15 +15,15 @@ interface IProfile
 const Profile = forwardRef<HTMLButtonElement, IProfile>(
   (
     { name, subtitle, color, responsive = true, size, noImage, ...props },
-    ref
+    ref,
   ) => {
     return (
-      <BounceIt className="w-fit">
+      <BounceIt className="kl-w-fit">
         <button
           {...props}
           ref={ref}
           className={cn(
-            'flex py-sm px-md gap-lg items-center ring-offset-1 dark:ring-offset-0 outline-none transition-all rounded focus-visible:ring-2 focus-visible:ring-border-focus dark:focus-visible:ring-border-darktheme-focus'
+            'kl-flex kl-py-sm kl-px-md kl-gap-lg kl-items-center kl-ring-offset-1 dark:kl-ring-offset-0 kl-outline-none kl-transition-all kl-rounded focus-visible:kl-ring-2 focus-visible:kl-ring-border-focus dark:focus-visible:kl-ring-border-darktheme-focus',
           )}
         >
           {!noImage && (
@@ -32,18 +32,18 @@ const Profile = forwardRef<HTMLButtonElement, IProfile>(
           {(name || subtitle) && (
             <div
               className={cn(
-                'flex-col items-start',
-                responsive ? 'hidden md:flex' : ' flex'
+                'kl-flex-col kl-items-start',
+                responsive ? 'kl-hidden md:kl-flex' : 'kl-hidden md:kl-flex',
               )}
             >
               {name && (
-                <div className="bodyMd-medium gap-y-md pulsable text-text-default dark:text-text-darktheme-default">
+                <div className="kl-bodyMd-medium kl-gap-y-md kl-pulsable kl-text-text-default dark:kl-text-text-darktheme-default">
                   {name}
                 </div>
               )}
 
               {subtitle && (
-                <div className="text-start bodySm text-text-soft dark:text-text-darktheme-soft pulsable">
+                <div className="kl-text-start kl-bodySm kl-text-text-soft dark:kl-text-text-darktheme-soft kl-pulsable">
                   {subtitle}
                 </div>
               )}
@@ -52,7 +52,7 @@ const Profile = forwardRef<HTMLButtonElement, IProfile>(
         </button>
       </BounceIt>
     );
-  }
+  },
 );
 
 export default Profile;

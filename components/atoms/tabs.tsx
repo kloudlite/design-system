@@ -88,14 +88,14 @@ const TabBase = ({
         setHoverd(false);
       }}
       className={cn(
-        'outline-none flex flex-col relative group bodyMd-medium transition-all cursor-pointer hover:text-text-default active:text-text-default',
+        'kl-outline-none kl-flex kl-flex-col kl-relative kl-group kl-bodyMd-medium kl-transition-all kl-cursor-pointer hover:kl-text-text-default active:kl-text-text-default',
         {
-          'text-text-default': active,
-          'text-text-soft': !active,
-          'rounded-lg hover:bg-surface-basic-hovered active:bg-surface-basic-pressed':
+          'kl-text-text-default': active,
+          'kl-text-text-soft': !active,
+          'kl-rounded-lg hover:kl-bg-surface-basic-hovered active:kl-bg-surface-basic-pressed':
             variant === 'filled',
           // 'border border-transparent': variant === 'filled' && !active,
-        }
+        },
       )}
     >
       <RovingFocusGroup.Item
@@ -114,23 +114,25 @@ const TabBase = ({
           {...extraProps}
           onClick={onClick}
           className={cn(
-            'relative z-10 tab-item outline-none',
-            'ring-offset-0 focus-visible:ring-border-focus focus-visible:ring-2',
+            'kl-relative kl-z-10 kl-tab-item kl-outline-none',
+            'kl-ring-offset-0 focus-visible:kl-ring-border-focus focus-visible:kl-ring-2',
             // 'focus-visible:shadow-focus',
             {
               ...((!fitted || variant === 'filled') && {
-                'px-2xl py-lg': size === 'md',
-                'px-lg py-md': size === 'sm',
-                'rounded-lg': true,
+                'kl-px-2xl kl-py-lg': size === 'md',
+                'kl-px-lg kl-py-md': size === 'sm',
+                'kl-rounded-lg': true,
               }),
               ...(fitted && {
-                'py-md': variant !== 'filled',
+                'kl-py-md': variant !== 'filled',
               }),
-            }
+            },
           )}
         >
-          {variant === 'plain' && <div className="h-md bg-none w-full z-0" />}
-          <div className="flex flex-row items-center gap-lg">
+          {variant === 'plain' && (
+            <div className="kl-h-md kl-bg-none kl-w-full kl-z-0" />
+          )}
+          <div className="kl-flex kl-flex-row kl-items-center kl-gap-lg">
             {!!prefix &&
               React.cloneElement(prefix, { size: 16, color: 'currentColor' })}
             {typeof label === 'function' ? label(active) : label}
@@ -139,24 +141,26 @@ const TabBase = ({
             <motion.div
               layoutId="underline"
               className={cn(
-                'h-md z-10 absolute left-0 bottom-0 w-full bg-border-primary'
+                'kl-h-md kl-z-10 kl-absolute kl-left-0 kl-bottom-0 kl-w-full kl-bg-border-primary',
               )}
             />
           )}
           {variant === 'plain' && hoverd && (
             <motion.div
               layoutId="hoverd-underline"
-              className="h-md bg-none absolute bottom-0 w-full z-0 left-0 bg-border-default group-active:bg-border-tertiary"
+              className="kl-h-md kl-bg-none kl-absolute kl-bottom-0 kl-w-full kl-z-0 kl-left-0 kl-bg-border-default group-active:kl-bg-border-tertiary"
             />
           )}
-          {variant === 'plain' && <div className="h-md bg-none w-full z-0" />}
+          {variant === 'plain' && (
+            <div className="kl-h-md kl-bg-none kl-w-full kl-z-0" />
+          )}
         </Component>
       </RovingFocusGroup.Item>
       <AnimatePresence>
         {variant === 'filled' && active && (
           <motion.div
             layoutId={layoutId}
-            className="absolute inset-0 rounded-lg shadow-button border border-border-default bg-surface-basic-default"
+            className="kl-absolute kl-inset-0 kl-rounded-lg kl-shadow-button kl-border kl-border-border-default kl-bg-surface-basic-default"
             transition={{ type: 'spring', bounce: 0.1, duration: 0.3 }}
           />
         )}
@@ -183,7 +187,7 @@ const Root = forwardRef<HTMLDivElement, ITabs<any>>(
       children,
       toLabel,
     },
-    ref
+    ref,
   ) => {
     const id = useId();
     // id = useMemo(() => id, [children, value, basePath, size, variant]);
@@ -192,13 +196,13 @@ const Root = forwardRef<HTMLDivElement, ITabs<any>>(
         orientation="horizontal"
         loop
         className={cn(
-          'flex flex-row items-center transition-all',
-          'snap-x',
+          'kl-flex kl-flex-row kl-items-center kl-transition-all',
+          'kl-snap-x',
           {
-            'md:gap-4xl': size === 'md' && variant !== 'filled',
-            'gap-lg': size === 'sm' || variant === 'filled',
+            'md:kl-gap-4xl': size === 'md' && variant !== 'filled',
+            'kl-gap-lg': size === 'sm' || variant === 'filled',
           },
-          className
+          className,
         )}
         ref={ref}
         asChild
@@ -214,8 +218,8 @@ const Root = forwardRef<HTMLDivElement, ITabs<any>>(
 
               return (
                 <div
-                  className={cn('snap-start', {
-                    'px-xl md:px-0': variant === 'plain',
+                  className={cn('kl-snap-start', {
+                    'kl-px-xl md:kl-px-0': variant === 'plain',
                   })}
                 >
                   <TabBase
@@ -239,7 +243,7 @@ const Root = forwardRef<HTMLDivElement, ITabs<any>>(
         </motion.div>
       </RovingFocusGroup.Root>
     );
-  }
+  },
 );
 
 const Tabs = {

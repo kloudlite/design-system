@@ -22,7 +22,7 @@ interface ISeparator {
 }
 
 const Separator = () => {
-  return <div className="bodyMd text-icon-disabled">/</div>;
+  return <div className="kl-bodyMd kl-text-icon-disabled">/</div>;
 };
 
 const Item = ({ children }: { children?: ReactNode }) => {
@@ -31,7 +31,7 @@ const Item = ({ children }: { children?: ReactNode }) => {
       variant="plain"
       content={children}
       size="sm"
-      className="!px-lg bodyMd-medium"
+      className="!kl-px-lg kl-bodyMd-medium"
     />
   );
 };
@@ -46,15 +46,15 @@ const ItemAdvance = ({
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
 
   return (
-    <div className="flex flex-col">
-      <span className="bodyXs text-text-disabled px-lg">{path}</span>
-      <div className="flex flex-row items-center">
+    <div className="kl-flex kl-flex-col">
+      <span className="kl-bodyXs kl-text-text-disabled kl-px-lg">{path}</span>
+      <div className="kl-flex kl-flex-row kl-items-center">
         <Button
           variant="plain"
           size="sm"
           content={optionValue}
           prefix={prefix}
-          className="!px-lg !bodyMd-medium"
+          className="!kl-px-lg !kl-bodyMd-medium"
         />
 
         {optionContent && (
@@ -64,8 +64,8 @@ const ItemAdvance = ({
                 ref={buttonRef}
                 aria-label="accounts"
                 className={cn(
-                  'outline-none rounded py-lg px-md mx-md',
-                  open || isMouseOver ? 'bg-surface-basic-pressed' : ''
+                  'kl-outline-none kl-rounded kl-py-lg kl-px-md kl-mx-md',
+                  open || isMouseOver ? 'kl-bg-surface-basic-pressed' : '',
                 )}
                 onMouseOver={() => {
                   setIsMouseOver(true);
@@ -80,12 +80,12 @@ const ItemAdvance = ({
                   //
                 }}
               >
-                <div className="flex flex-row items-center gap-md">
+                <div className="kl-flex kl-flex-row kl-items-center kl-gap-md">
                   <ChevronUpDown size={16} />
                 </div>
               </button>
             </OptionList.Trigger>
-            <OptionList.Content className="!pt-0 !pb-md" align="end">
+            <OptionList.Content className="!kl-pt-0 !kl-pb-md" align="end">
               {optionContent}
             </OptionList.Content>
           </OptionList.Root>
@@ -105,7 +105,7 @@ const Header = ({ items }: IRoot) => {
     <div
       className={cn(
         'px-3xl h-[60px] py-lg bg-surface-basic-subdued border-b border-border-default w-full flex flex-row sticky top-0 z-20',
-        itemAlignEnd ? 'items-end' : 'items-center'
+        itemAlignEnd ? 'items-end' : 'items-center',
       )}
     >
       {(items || []).map((i, key) => {

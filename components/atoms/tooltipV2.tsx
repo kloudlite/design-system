@@ -18,7 +18,7 @@ const TooltipV2 = ({
 }) => {
   return (
     <a
-      className="flex w-fit max-w-full truncate"
+      className="kl-flex kl-w-fit kl-max-w-full kl-truncate"
       data-tooltip-id="tooltip"
       data-tooltip-html={ReactDOMServer.renderToStaticMarkup(content)}
       data-tooltip-place={place}
@@ -37,7 +37,7 @@ export const TooltipContainer = () => {
       id={'tooltip'}
       disableStyleInjection
       className={cn(
-        'z-[99999999999] bodySm text-text-default px-lg py-md shadow-popover bg-surface-basic-default rounded w-fit overflow-hidden [pointer-events:all]',
+        'kl-z-[99999999999] kl-bodySm kl-text-text-default kl-px-lg kl-py-md kl-shadow-popover kl-bg-surface-basic-default kl-rounded kl-w-fit kl-overflow-hidden [pointer-events:all]',
       )}
       noArrow
       offset={0}

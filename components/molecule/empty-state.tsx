@@ -20,29 +20,39 @@ export const EmptyState = ({
   secondaryAction,
 }: IEmptyState) => {
   return (
-    <div className="flex flex-col items-center shadow-card border border-border-default rounded">
-      <div className={cn('flex flex-col items-center px-3xl py-8xl gap-5xl')}>
-        {image ? (
-          <img src={image} className="max-h-43 max-w-37" alt="empty state" />
-        ) : (
-          <div className="h-43 w-37 bg-surface-basic-hovered" />
+    <div className="kl-flex kl-flex-col kl-items-center kl-shadow-card kl-border kl-border-border-default kl-rounded">
+      <div
+        className={cn(
+          'kl-flex kl-flex-col kl-items-center kl-px-3xl kl-py-8xl kl-gap-5xl',
         )}
-        <div className="flex flex-col gap-2xl pb-8xl">
-          <div className="headingLg text-center">{heading}</div>
+      >
+        {image ? (
+          <img
+            src={image}
+            className="kl-max-h-43 kl-max-w-37"
+            alt="empty state"
+          />
+        ) : (
+          <div className="kl-h-43 kl-w-37 kl-bg-surface-basic-hovered" />
+        )}
+        <div className="kl-flex kl-flex-col kl-gap-2xl kl-pb-8xl">
+          <div className="kl-headingLg kl-text-center">{heading}</div>
           {children && (
-            <div className="text-text-strong bodyMd text-center">
+            <div className="kl-text-text-strong kl-bodyMd kl-text-center">
               {children}
             </div>
           )}
           {(!!action || !!secondaryAction) && (
-            <div className="flex flex-row items-center justify-center gap-lg">
+            <div className="kl-flex kl-flex-row kl-items-center kl-justify-center kl-gap-lg">
               {!!secondaryAction && (
                 <Button {...{ ...secondaryAction, variant: 'outline' }} />
               )}
               {!!action && <Button {...{ ...action, variant: 'primary' }} />}
             </div>
           )}
-          {!!footer && <div className="bodySm text-text-soft">{footer}</div>}
+          {!!footer && (
+            <div className="kl-bodySm kl-text-text-soft">{footer}</div>
+          )}
         </div>
       </div>
     </div>

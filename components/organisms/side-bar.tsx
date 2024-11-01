@@ -51,8 +51,8 @@ const Item = ({
     <LinkComponent
       {...p}
       className={cn(
-        'cursor-pointer px-3xl py-[10px] min-h-[40px] bodyMd text-text-default hover:bg-surface-basic-hovered flex flex-row items-center gap-lg flex-shrink-0',
-        active ? 'bg-surface-basic-pressed' : ''
+        'kl-cursor-pointer kl-px-3xl kl-py-[10px] kl-min-h-[40px] kl-bodyMd kl-text-text-default hover:kl-bg-surface-basic-hovered kl-flex kl-flex-row kl-items-center kl-gap-lg kl-flex-shrink-0',
+        active ? 'kl-bg-surface-basic-pressed' : '',
       )}
     >
       <span>
@@ -61,18 +61,18 @@ const Item = ({
             size: 16,
           })}
       </span>
-      <motion.div className="overflow-hidden">{children}</motion.div>
+      <motion.div className="kl-overflow-hidden">{children}</motion.div>
     </LinkComponent>
   );
 };
 
 const Separator = () => {
-  return <div className="bg-border-default h-xs w-full" />;
+  return <div className="kl-bg-border-default kl-h-xs kl-w-full" />;
 };
 
 const Header = ({ children }: { children?: ReactNode }) => {
   return (
-    <div className="h-[60px] p-2xl border-b border-b-border-default flex flex-row items-center gap-lg">
+    <div className="kl-h-[60px] kl-p-2xl kl-border-b kl-border-b-border-default kl-flex kl-flex-row kl-items-center kl-gap-lg">
       {children}
     </div>
   );
@@ -132,7 +132,7 @@ const Root = ({
           onCollapseChange?.({ type: 'start', value: e });
         }}
         className={cn(
-          'min-h-screen max-h-screen flex flex-col bg-surface-basic-active border-r border-r-border-default sticky top-0 flex-shrink-0'
+          'kl-min-h-screen kl-max-h-screen kl-flex kl-flex-col kl-bg-surface-basic-active kl-border-r kl-border-r-border-default kl-sticky kl-top-0 kl-flex-shrink-0',
         )}
       >
         {Children.map(children, (child) => {
@@ -144,19 +144,19 @@ const Root = ({
           onClick={() => {
             setOpen((prev) => !prev);
           }}
-          className="absolute -right-4xl top-1/2 transform -translate-y-1/2 text-icon-soft w-4xl flex items-center justify-center cursor-pointer"
+          className="kl-absolute -kl-right-4xl kl-top-1/2 kl-transform -kl-translate-y-1/2  kl-text-icon-soft kl-w-4xl kl-flex kl-items-center kl-justify-center kl-cursor-pointer"
         >
           <motion.div
             whileHover={open ? 'open' : 'close'}
-            className="flex flex-col h-2xl w-full items-center"
+            className="kl-flex kl-flex-col kl-h-2xl kl-w-full kl-items-center"
           >
             <motion.div
               variants={topIcon}
-              className="w-sm bg-icon-soft h-lg rounded-full !rounded-b-none"
+              className="kl-w-sm kl-bg-icon-soft kl-h-lg kl-rounded-full !kl-rounded-b-none"
             />
             <motion.div
               variants={bottomIcon}
-              className="w-sm bg-icon-soft h-lg rounded-full !rounded-t-none"
+              className="kl-w-sm kl-bg-icon-soft kl-h-lg kl-rounded-full !kl-rounded-t-none"
             />
           </motion.div>
         </div>

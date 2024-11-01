@@ -177,13 +177,13 @@ dependencies:
     specifier: ^10.5.0
     version: 10.6.2(react-dom@18.3.1)(react@18.2.0)
   react:
-    specifier: 18.2.0
+    specifier: ^18.2.0 || ^17.0.0 || ^16.0.0
     version: 18.2.0
   react-diff-viewer-continued:
     specifier: ^3.4.0
     version: 3.4.0(react-dom@18.3.1)(react@18.2.0)
   react-dom:
-    specifier: ^18.2.0
+    specifier: ^18.2.0 || ^17.0.0 || ^16.0.0
     version: 18.3.1(react@18.2.0)
   react-google-recaptcha-v3:
     specifier: ^1.10.1

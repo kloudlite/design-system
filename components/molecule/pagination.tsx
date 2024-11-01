@@ -23,13 +23,13 @@ export const usePagination = <T extends Array<any>>({
     if (listItems.length > 0) {
       let tempItems = listItems.slice(
         (pageNumber - 1) * itemsPerPage,
-        pageNumber * itemsPerPage
+        pageNumber * itemsPerPage,
       );
 
       if (tempItems.length === 0) {
         tempItems = listItems.slice(
           (Math.ceil(listItems.length / itemsPerPage) - 1) * itemsPerPage,
-          listItems.length
+          listItems.length,
         );
         setPageNumber((prev) => prev - 1);
       }
@@ -58,8 +58,8 @@ export const usePagination = <T extends Array<any>>({
       setPage(
         listItems.slice(
           pageNumber * itemsPerPage,
-          (pageNumber + 1) * itemsPerPage
-        ) as T
+          (pageNumber + 1) * itemsPerPage,
+        ) as T,
       );
       setPageNumber((prev) => prev + 1);
     }
@@ -70,8 +70,8 @@ export const usePagination = <T extends Array<any>>({
       setPage(
         listItems.slice(
           (pageNumber - 1 - 1) * itemsPerPage,
-          (pageNumber - 1) * itemsPerPage
-        ) as T
+          (pageNumber - 1) * itemsPerPage,
+        ) as T,
       );
       setPageNumber((prev) => prev - 1);
     }
@@ -84,8 +84,8 @@ export const usePagination = <T extends Array<any>>({
       setPage(
         listItems.slice(
           (extpage - 1) * itemsPerPage,
-          extpage * itemsPerPage
-        ) as T
+          extpage * itemsPerPage,
+        ) as T,
       );
       setPageNumber(extpage);
     }
@@ -169,7 +169,7 @@ const Pagination = ({
     }
     if (totalPages < 7) {
       setStartPages(
-        new Array(totalPages).fill(0).map((value, index) => index + 1)
+        new Array(totalPages).fill(0).map((value, index) => index + 1),
       );
       setMiddlePages([]);
       setEndPages([]);
@@ -196,18 +196,18 @@ const Pagination = ({
     if (focusCallback) {
       if (focusItem && ref?.current?.children) {
         const itemsArray = Array.from(
-          ref.current?.children
+          ref.current?.children,
         ) as HTMLButtonElement[];
 
         if (itemsArray.find((e) => e.value === `${focusItem}`)) {
           itemsArray?.find((e) => e.value === `${focusItem}`)?.focus();
         } else {
           const divElement = itemsArray?.find(
-            (e) => e.tagName.toLowerCase() === 'div'
+            (e) => e.tagName.toLowerCase() === 'div',
           );
           if (divElement) {
             const divElementArray = Array.from(
-              divElement.children
+              divElement.children,
             ) as HTMLButtonElement[];
             if (divElementArray) {
               divElementArray.find((e) => e.value === `${focusItem}`)?.focus();
@@ -225,12 +225,15 @@ const Pagination = ({
 
   return (
     <div
-      className={cn('flex flex-row items-center gap-3xl w-full', {
-        'justify-end': !showItemsPerPage,
-      })}
+      className={cn(
+        'kl-flex kl-flex-row kl-items-center kl-gap-3xl kl-w-full',
+        {
+          'kl-justify-end': !showItemsPerPage,
+        },
+      )}
     >
       {showItemsPerPage && (
-        <div className="flex flex-row items-center flex-1 gap-lg text-icon-default bodyMd">
+        <div className="kl-flex kl-flex-row kl-items-center kl-flex-1 kl-gap-lg kl-text-icon-default kl-bodyMd">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
           <label htmlFor={itemsPerPageId}>Item per page</label>
           <select
@@ -242,11 +245,11 @@ const Pagination = ({
               setItemsPerPageValue(Number(e.target.value));
             }}
             className={cn(
-              'py-md pl-lg pr-5xl text-text-default border-border-default bg-surface-basic-input transition-all rounded border flex flex-row items-center relative outline-none disabled:bg-surface-basic-input disabled:text-text-disabled ring-offset-1 focus-within:ring-2 focus-within:ring-border-focus appearance-none',
+              'kl-py-md kl-pl-lg kl-pr-5xl kl-text-text-default kl-border-border-default kl-bg-surface-basic-input kl-transition-all kl-rounded kl-border kl-flex kl-flex-row kl-items-center kl-relative kl-outline-none disabled:kl-bg-surface-basic-input disabled:kl-text-text-disabled kl-ring-offset-1 focus-within:kl-ring-2 focus-within:kl-ring-border-focus kl-appearance-none',
               {
-                'text-text-disabled border-border-disabled bg-surface-basic-input':
+                'kl-text-text-disabled kl-border-border-disabled kl-bg-surface-basic-input':
                   disabled,
-              }
+              },
             )}
           >
             {ITEMS_PER_PAGE.map((ipp) => (
@@ -267,7 +270,7 @@ const Pagination = ({
         </div>
       )}
       <RovingFocusGroup.Root loop>
-        <div className="flex flex-row items-center gap-xl">
+        <div className="kl-flex kl-flex-row kl-items-center kl-gap-xl">
           <RovingFocusGroup.Item asChild focusable>
             <Button
               content="Previous"
@@ -285,7 +288,10 @@ const Pagination = ({
             />
           </RovingFocusGroup.Item>
           {showNumbers && (
-            <div className="flex flex-row items-center gap-lg" ref={ref}>
+            <div
+              className="kl-flex kl-flex-row kl-items-center kl-gap-lg"
+              ref={ref}
+            >
               {startPages.map((sP) => (
                 <RovingFocusGroup.Item asChild focusable key={sP}>
                   <Button
@@ -303,9 +309,9 @@ const Pagination = ({
                   />
                 </RovingFocusGroup.Item>
               ))}
-              <div className="flex flex-row items-center gap-lg">
+              <div className="kl-flex kl-flex-row kl-items-center kl-gap-lg">
                 {middlePages.length > 0 && (
-                  <span className="bodyMd text-text-default">.....</span>
+                  <span className="kl-bodyMd kl-text-text-default">.....</span>
                 )}
                 {middlePages.map((mP) => (
                   <RovingFocusGroup.Item asChild focusable key={mP}>
@@ -326,7 +332,7 @@ const Pagination = ({
                   </RovingFocusGroup.Item>
                 ))}
                 {totalPages >= 7 && (
-                  <span className="bodyMd text-text-default">.....</span>
+                  <span className="kl-bodyMd kl-text-text-default">.....</span>
                 )}
               </div>
               {endPages.map((eP) => (

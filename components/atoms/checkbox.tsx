@@ -28,25 +28,25 @@ export const Checkbox = ({
   const id = useId();
   const rend = () => {
     return (
-      <div className="flex items-center justify-center w-fit">
+      <div className={cn('kl-flex kl-items-center kl-justify-center kl-w-fit')}>
         <CheckboxPrimitive.Root
           className={cn(
-            'rounded flex flex-row items-center justify-center border w-2xl h-2xl outline-none transition-all cursor-pointer',
-            'ring-border-focus ring-offset-1 focus:ring-2',
+            'kl-rounded kl-flex kl-flex-row kl-items-center kl-justify-center kl-border kl-w-2xl kl-h-2xl kl-outline-none kl-transition-all kl-cursor-pointer',
+            'kl-ring-border-focus kl-ring-offset-1 focus:kl-ring-2',
             {
-              'border-border-disabled !cursor-default': disabled,
+              'kl-border-border-disabled !kl-cursor-default': disabled,
             },
             {
-              'bg-surface-basic-default border-border-default':
+              'kl-bg-surface-basic-default kl-border-border-default':
                 !checked && !disabled && !error,
-              'bg-surface-critical-subdued border-border-critical':
+              'kl-bg-surface-critical-subdued kl-border-border-critical':
                 !checked && !disabled && error,
-              'bg-surface-primary-default border-border-primary':
+              'kl-bg-surface-primary-default kl-border-border-primary':
                 !!checked && !error && !disabled,
-              'bg-surface-critical-default border-border-critical':
+              'kl-bg-surface-critical-default kl-border-border-critical':
                 !!checked && error && !disabled,
-              'hover:bg-surface-basic-hovered': !checked && !disabled,
-            }
+              'hover:kl-bg-surface-basic-hovered': !checked && !disabled,
+            },
           )}
           defaultChecked
           id={id}
@@ -76,8 +76,8 @@ export const Checkbox = ({
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   className={cn({
-                    'stroke-text-disabled': disabled,
-                    'stroke-text-on-primary': !disabled,
+                    'kl-stroke-text-disabled': disabled,
+                    'kl-stroke-text-on-primary': !disabled,
                   })}
                 />
               )}
@@ -87,8 +87,8 @@ export const Checkbox = ({
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   className={cn({
-                    'stroke-text-disabled': disabled,
-                    'stroke-text-on-primary': !disabled,
+                    'kl-stroke-text-disabled': disabled,
+                    'kl-stroke-text-on-primary': !disabled,
                   })}
                 />
               )}
@@ -99,11 +99,11 @@ export const Checkbox = ({
           <label
             className={cn(
               {
-                'text-text-disabled': disabled,
-                'text-text-default cursor-pointer': !disabled && !error,
-                'text-text-critical cursor-pointer': !disabled && error,
+                'kl-text-text-disabled': disabled,
+                'kl-text-text-default kl-cursor-pointer': !disabled && !error,
+                'kl-text-text-critical kl-cursor-pointer': !disabled && error,
               },
-              'bodyMd pl-lg select-none'
+              'kl-bodyMd kl-pl-lg kl-select-none',
             )}
             htmlFor={id}
           >

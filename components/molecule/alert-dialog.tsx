@@ -7,8 +7,8 @@ import { cn } from '../utils';
 
 const Header = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="bg-surface-basic-active p-3xl flex flex-row items-center justify-between">
-      <PrimitiveAlertDialog.Title className="headingLg text-text-strong">
+    <div className="kl-bg-surface-basic-active kl-p-3xl kl-flex kl-flex-row kl-items-center kl-justify-between">
+      <PrimitiveAlertDialog.Title className="kl-headingLg kl-text-text-strong">
         {children}
       </PrimitiveAlertDialog.Title>
       <PrimitiveAlertDialog.Cancel asChild>
@@ -19,12 +19,14 @@ const Header = ({ children }: { children: ReactNode }) => {
 };
 
 const Content = ({ children }: { children: ReactNode }) => {
-  return <div className="p-3xl bodyMd">{children}</div>;
+  return <div className="kl-p-3xl kl-bodyMd">{children}</div>;
 };
 
 const Footer = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="p-3xl flex flex-row justify-end gap-lg">{children}</div>
+    <div className="kl-p-3xl kl-flex kl-flex-row kl-justify-end kl-gap-lg">
+      {children}
+    </div>
   );
 };
 
@@ -74,8 +76,8 @@ const Root = ({ show, onOpenChange, children, backdrop = true }: IDialog) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2, ease: 'anticipate' }}
-                className={cn('fixed inset-0 z-40', {
-                  'bg-text-default/60': backdrop,
+                className={cn('kl-fixed kl-inset-0 kl-z-40', {
+                  'kl-bg-text-default/60': backdrop,
                 })}
               />
             </PrimitiveAlertDialog.Overlay>
@@ -85,7 +87,7 @@ const Root = ({ show, onOpenChange, children, backdrop = true }: IDialog) => {
                 animate={{ x: '-50%', y: '-50%', opacity: 1 }}
                 exit={{ x: '-50%', y: '-47%', opacity: 0 }}
                 transition={{ duration: 0.3, ease: 'anticipate' }}
-                className="z-50 outline-none transform overflow-hidden rounded bg-surface-basic-default shadow-modal border border-border-default fixed top-1/2 left-1/2 w-[612px] max-w-[612px]"
+                className="kl-z-50 kl-outline-none kl-transform kl-overflow-hidden kl-rounded kl-bg-surface-basic-default kl-shadow-modal kl-border kl-border-border-default kl-fixed kl-w-[612px] kl-max-w-[612px] kl-top-1/2 kl-left-1/2"
               >
                 {children}
               </motion.div>

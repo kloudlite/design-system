@@ -21,15 +21,15 @@ export const toast = {
 };
 
 const classes = {
-  info: 'bg-surface-basic-default dark:bg-surface-darktheme-basic-default text-text-default dark:text-text-darktheme-default bodyMd border-border-disabled dark:border-border-darktheme-disabled',
+  info: 'kl-bg-surface-basic-default dark:kl-bg-surface-darktheme-basic-default kl-text-text-default dark:kl-text-text-darktheme-default kl-bodyMd kl-border-border-disabled dark:kl-border-border-darktheme-disabled',
   error:
-    'bg-surface-basic-default dark:bg-surface-darktheme-basic-default text-text-default dark:text-text-darktheme-default bodyMd border-border-disabled  dark:border-border-darktheme-disabled',
+    'kl-bg-surface-basic-default dark:kl-bg-surface-darktheme-basic-default kl-text-text-default dark:kl-text-text-darktheme-default kl-bodyMd kl-border-border-disabled dark:kl-border-border-darktheme-disabled',
   success:
-    'bg-surface-basic-default dark:bg-surface-darktheme-basic-default text-text-default dark:text-text-darktheme-default bodyMd border-border-disabled dark:border-border-darktheme-disabled',
+    'kl-bg-surface-basic-default dark:kl-bg-surface-darktheme-basic-default kl-text-text-default dark:kl-text-text-darktheme-default kl-bodyMd kl-border-border-disabled dark:kl-border-border-darktheme-disabled',
   warning:
-    'bg-surface-basic-default dark:bg-surface-darktheme-basic-default text-text-default dark:text-text-darktheme-default bodyMd border-border-disabled dark:border-border-darktheme-disabled',
+    'kl-bg-surface-basic-default dark:kl-bg-surface-darktheme-basic-default kl-text-text-default dark:kl-text-text-darktheme-default kl-bodyMd kl-border-border-disabled dark:kl-border-border-darktheme-disabled',
   default:
-    'bg-surface-basic-default dark:bg-surface-darktheme-basic-default text-text-default dark:text-text-darktheme-default bodyMd border-border-disabled dark:border-border-darktheme-disabled',
+    'kl-bg-surface-basic-default dark:kl-bg-surface-darktheme-basic-default kl-text-text-default dark:kl-text-text-darktheme-default kl-bodyMd kl-border-border-disabled dark:kl-border-border-darktheme-disabled',
 };
 
 const icons = {
@@ -41,7 +41,7 @@ const icons = {
 };
 
 const CloseButton = () => (
-  <span className="text-text-default dark:text-text-darktheme-default hover:text-text-default/50 dark:hover:text-text-darktheme-default/50 h-[24px] flex items-center">
+  <span className="kl-text-text-default dark:kl-text-text-darktheme-default hover:kl-text-text-default/50 dark:kl-hover:text-text-darktheme-default/50 kl-h-[24px] kl-flex kl-items-center">
     <X color="currentColor" size={12} />
   </span>
 );
@@ -54,11 +54,11 @@ export const ToastContainer = ({ autoClose, position }: IToastContainer) => {
   return (
     <Container
       toastClassName={({ type }: any) =>
-        `z-[9999999999] shadow-popover relative flex items-start gap-xl p-xl mb-xl rounded-md justify-between overflow-hidden cursor-pointer border 
+        `kl-z-[9999999999] kl-shadow-popover kl-relative kl-flex kl-items-start kl-gap-xl kl-p-xl kl-mb-xl kl-rounded-md kl-justify-between kl-overflow-hidden kl-cursor-pointer kl-border 
         ${classes[(type || 'default') as keyof typeof classes]}`
       }
       bodyClassName={() =>
-        'text-text-default dark:text-text-darktheme-default py-sm bodyMd-medium flex flex-row items-center [&>*]:!w-auto [&>*]:break-all [&>*]:whitespace-break-spaces'
+        'kl-text-text-default dark:kl-text-text-darktheme-default kl-py-sm kl-bodyMd-medium kl-flex kl-flex-row kl-items-center [&>*]:!kl-w-auto [&>*]:kl-break-all [&>*]:kl-whitespace-break-spaces'
       }
       hideProgressBar
       icon={({ type }) => icons[type]}

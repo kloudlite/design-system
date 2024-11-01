@@ -21,35 +21,35 @@ const ScrollArea = ({
     setIsScrolled(target.scrollLeft > 0);
   };
   return (
-    <div className={cn('w-0 relative', className)}>
+    <div className={cn('kl-w-0 kl-relative', className)}>
       {isScrolled && leftblur && (
         <div
           className={cn(
-            'z-20 bg-gradient-to-r to-transparent absolute h-full w-2xl -left-[3px] top-0',
+            'kl-z-20 kl-bg-gradient-to-r kl-to-transparent kl-absolute kl-h-full kl-w-2xl -kl-left-[3px] kl-top-0',
             {
-              'from-surface-basic-subdued': !blurfrom,
+              'kl-from-surface-basic-subdued': !blurfrom,
             },
 
-            blurfrom
+            blurfrom,
           )}
         />
       )}
       <div
         tabIndex={-1}
-        className="no-scrollbar overflow-x-scroll flex flex-row py-[3px] pl-[3px] -ml-[3px] pr-2xl whitespace-nowrap"
+        className="kl-no-scrollbar kl-overflow-x-scroll kl-flex kl-flex-row kl-py-[3px] kl-pl-[3px] -kl-ml-[3px] kl-pr-2xl kl-whitespace-nowrap"
         onScroll={handleScroll}
       >
         {children}
-        {rightblur && <div className="w-[3px] min-w-[3px]" />}
+        {rightblur && <div className="kl-w-[3px] kl-min-w-[3px]" />}
       </div>
       {rightblur && (
         <div
           className={cn(
-            'bg-gradient-to-l to-transparent absolute h-full w-2xl right-0 top-0 z-20',
+            'kl-bg-gradient-to-l kl-to-transparent kl-absolute kl-h-full kl-w-2xl kl-right-0 kl-top-0 kl-z-20',
             {
-              'from-surface-basic-subdued': !blurfrom,
+              'kl-from-surface-basic-subdued': !blurfrom,
             },
-            blurfrom
+            blurfrom,
           )}
         />
       )}

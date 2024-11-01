@@ -45,21 +45,21 @@ export const Root = (props: IRoot) => {
   const tempId = useId();
   const id = useMemo(() => tempId, []);
   return (
-    <div className="flex flex-col">
+    <div className="kl-flex kl-flex-col">
       <div
-        className={cn('flex items-center', {
-          'pb-md': !!label,
+        className={cn('kl-flex kl-items-center', {
+          'kl-pb-md': !!label,
         })}
       >
         <label
-          className="flex-1 select-none bodyMd-medium text-text-default"
+          className="kl-flex-1 kl-select-none kl-bodyMd-medium kl-text-text-default"
           htmlFor={id}
         >
           {label}
         </label>
         <div
           className={cn({
-            'h-4xl': !!label,
+            'kl-h-4xl': !!label,
           })}
         />
       </div>
@@ -70,13 +70,13 @@ export const Root = (props: IRoot) => {
         value={value}
         onChange={onChange}
         className={cn(
-          'bodyMd py-lg pl-lg pr-5xl text-text-default border-border-default bg-surface-basic-input transition-all rounded border flex flex-row items-center relative outline-none disabled:bg-surface-basic-input disabled:text-text-disabled disabled:border-border-disabled ring-offset-1 focus-within:ring-2 focus-within:ring-border-focus appearance-none',
+          'kl-bodyMd kl-py-lg kl-pl-lg kl-pr-5xl kl-text-text-default kl-border-border-default kl-bg-surface-basic-input kl-transition-all kl-rounded kl-border kl-flex kl-flex-row kl-items-center kl-relative kl-outline-none disabled:kl-bg-surface-basic-input disabled:kl-text-text-disabled disabled:kl-border-border-disabled kl-ring-offset-1 focus-within:kl-ring-2 focus-within:kl-ring-border-focus kl-appearance-none',
           {
-            'w-full': block,
-            'py-lg': size === 'md',
-            'py-xl': size === 'lg',
+            'kl-w-full': block,
+            'kl-py-lg': size === 'md',
+            'kl-py-xl': size === 'lg',
           },
-          className
+          className,
         )}
       >
         {children}

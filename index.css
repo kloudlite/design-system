@@ -1,14 +1,14 @@
 /* @import url('https://rsms.me/inter/inter.css'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap'); */
-@import "./css/primitives.css";
-@import "./css/default.css";
-@import "./css/dark.css";
-@import "css/slider.css";
-@import "./node_modules/@oshq/react-select/dist/index.css";
-@import "./node_modules/react-toastify/dist/ReactToastify.min.css";
+@import './css/primitives.css';
+@import './css/default.css';
+@import './css/dark.css';
+@import 'css/slider.css';
+@import './node_modules/@oshq/react-select/dist/index.css';
+@import './node_modules/react-toastify/dist/ReactToastify.min.css';
 
 html {
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
 
 @tailwind base;
@@ -42,10 +42,10 @@ select {
 }
 
 .pulse-element {
-  @apply !text-transparent !relative !border-0;
+  @apply !kl-text-transparent !kl-relative !kl-border-0;
 }
 .pulse-child-element {
-  @apply opacity-0;
+  @apply kl-opacity-0;
 }
 
 .progressItem::before {
@@ -53,15 +53,15 @@ select {
 }
 
 .dark-hidden {
-  @apply group-data-[theme=dark]/html:hidden;
+  @apply group-data-[theme=dark]/html:kl-hidden;
 }
 
 .dark-flex {
-  @apply group-data-[theme=dark]/html:flex;
+  @apply group-data-[theme=dark]/html:kl-flex;
 }
 
 .dark-block {
-  @apply group-data-[theme=dark]/html:block;
+  @apply group-data-[theme=dark]/html:kl-block;
 }
 
 .Toastify {
