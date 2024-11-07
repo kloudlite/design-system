@@ -52,7 +52,7 @@ export const Item = ({
       >
         <RadioGroupPrimitive.Item
           className={cn(
-            'kl-w-2xl kl-h-2xl kl-outline-none kl-rounded-full kl-border kl-pulsable kl-pulsable-hidden kl-ring-border-focus focus:kl-ring-2 kl-transition-all kl-flex kl-items-center kl-justify-center kl-border-border-default',
+            'kl-w-2xl kl-h-2xl kl-outline-none kl-rounded-full kl-border pulsable pulsable-hidden kl-ring-border-focus focus:kl-ring-2 kl-transition-all kl-flex kl-items-center kl-justify-center kl-border-border-default',
             {
               'hover:kl-bg-surface-basic-hovered': !disabled,
               'data-[state=checked]:kl-border-border-primary': !disabled,

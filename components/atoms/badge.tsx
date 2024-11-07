@@ -19,7 +19,7 @@ export const Badge = ({
   return (
     <div
       className={cn(
-        'kl-flex kl-gap-md kl-items-center kl-py-md kl-px-2xl kl-w-fit kl-rounded-full kl-bodySm kl-border kl-select-none kl-pulsable',
+        'kl-flex kl-gap-md kl-items-center kl-py-md kl-px-2xl kl-w-fit kl-rounded-full kl-bodySm kl-border kl-select-none pulsable',
         {
           'kl-border-border-dark kl-bg-surface-basic-subdued kl-text-text-default':
             type === 'neutral',
@@ -32,7 +32,7 @@ export const Badge = ({
           'kl-border-border-critical kl-bg-surface-critical-subdued kl-text-text-critical':
             type === 'critical',
         },
-        className,
+        className
       )}
     >
       {!!icon && cloneElement(icon, iconProps)}

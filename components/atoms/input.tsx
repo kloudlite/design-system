@@ -139,7 +139,7 @@ export const TextInputBase = forwardRef<HTMLInputElement, ITextInputBase>(
             )}
           >
             <label
-              className="kl-select-none kl-bodyMd-medium kl-pulsable kl-min-w-[33%] kl-text-text-soft"
+              className="kl-select-none kl-bodyMd-medium pulsable kl-min-w-[33%] kl-text-text-soft"
               htmlFor={id}
             >
               {label}
