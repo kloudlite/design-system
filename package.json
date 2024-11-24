@@ -3,12 +3,8 @@
   "private": false,
   "type": "module",
   "description": "A design system for building ambitious products.",
-  "version": "0.0.3",
-  "keywords": [
-    "UI",
-    "Design system",
-    "components"
-  ],
+  "version": "0.0.4",
+  "keywords": ["UI", "Design system", "components"],
   "author": "kloudlite",
   "license": "ISC",
   "scripts": {
