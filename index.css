@@ -4,7 +4,7 @@
 @import './css/default.css';
 @import './css/dark.css';
 @import 'css/slider.css';
-@import './node_modules/@oshq/react-select/dist/index.css';
+@import './node_modules/@zener/react-select/dist/index.css';
 @import './node_modules/react-toastify/dist/ReactToastify.min.css';
 
 html {

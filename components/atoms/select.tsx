@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
-import SelectZener from '@oshq/react-select';
+import SelectZener from '@zener/react-select';
 import type {
   IGroupRender,
   IMenuItemRender,
   ISelect,
-} from '@oshq/react-select';
+} from '@zener/react-select';
 import { ChevronUpDown, CircleNotch, X } from '~/components/icons';
 import { cn } from '../utils';
 import AnimateHide from './animate-hide';
@@ -54,7 +54,7 @@ const suffixRender = ({
     <div
       className={cn(
         'kl-px-lg kl-flex kl-flex-row kl-items-center kl-gap-lg',
-        error && !disabled ? 'kl-text-text-critical' : '',
+        error && !disabled ? 'kl-text-text-critical' : ''
       )}
     >
       {loading && (
@@ -79,7 +79,7 @@ const Select = <T, U extends boolean | undefined = undefined>(
     message?: ReactNode;
     loading?: boolean;
     error?: boolean;
-  },
+  }
 ) => {
   const {
     value,
@@ -129,7 +129,7 @@ const Select = <T, U extends boolean | undefined = undefined>(
                     },
                     error && !disabled
                       ? 'kl-bg-surface-critical-subdued kl-border-text-critical kl-text-text-critical'
-                      : '',
+                      : ''
                   );
                   return {
                     default: `${c} kl-border-border-default kl-bg-surface-basic-input kl-text-text-default`,
@@ -150,7 +150,7 @@ const Select = <T, U extends boolean | undefined = undefined>(
                   className={cn(
                     error && !disabled
                       ? 'kl-text-text-critical/70'
-                      : 'kl-text-text-disabled',
+                      : 'kl-text-text-disabled'
                   )}
                 >
                   {placeholder}
@@ -201,7 +201,7 @@ const Select = <T, U extends boolean | undefined = undefined>(
               'kl-text-text-critical': !!error,
               'kl-text-text-default': !error,
             },
-            'kl-pt-md',
+            'kl-pt-md'
           )}
         >
           {message}
