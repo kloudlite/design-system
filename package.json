@@ -1,9 +1,9 @@
 {
-  "name": "@kloudlite/design-system",
+  "name": "kloudlite-design-system",
   "private": false,
   "type": "module",
   "description": "A design system for building ambitious products.",
-  "version": "0.0.4",
+  "version": "0.0.51",
   "keywords": ["UI", "Design system", "components"],
   "author": "kloudlite",
   "license": "ISC",
@@ -19,7 +19,7 @@
     "tscheck": "tsc --noEmit --watch"
   },
   "peerDependencies": {
-    "react": "^18.2.0 || ^17.0.0 || ^16.0.0",
+    "react": "^18.2.0 || ^17.0.0 || ^16.0.0 || ^0.19.0",
     "react-dom": "^18.2.0 || ^17.0.0 || ^16.0.0"
   },
   "devDependencies": {
