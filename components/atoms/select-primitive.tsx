@@ -1,3 +1,5 @@
+'use client';
+
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { ChangeEventHandler, ReactNode, useId, useMemo } from 'react';
 import { cn } from '../utils';

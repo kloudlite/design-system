@@ -1,3 +1,5 @@
+'use client';
+
 import * as MenuPrimitive from '@radix-ui/react-menu';
 import { motion } from 'framer-motion';
 import React, {

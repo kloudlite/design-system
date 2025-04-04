@@ -1,3 +1,5 @@
+'use client';
+
 import SliderPrimitive from 'rc-slider';
 
 interface ISlider {

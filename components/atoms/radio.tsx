@@ -1,3 +1,5 @@
+'use client';
+
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import React, { ReactElement, ReactNode, cloneElement, useId } from 'react';
 import { BounceIt } from '../bounce-it';

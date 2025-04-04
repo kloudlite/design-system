@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactNode } from 'react';
 import SelectZener from '@zener/react-select';
 import type {

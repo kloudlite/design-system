@@ -1,4 +1,5 @@
-"use client";
+'use client';
+
 /* eslint-disable no-nested-ternary */
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { KeyboardEventHandler, MouseEventHandler } from 'react';

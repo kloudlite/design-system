@@ -1,3 +1,5 @@
+'use client';
+
 import { LayoutGroup, motion } from 'framer-motion';
 import React, { ReactElement, ReactNode, useId, useMemo } from 'react';
 import { cn } from '../utils';

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { ReactElement, cloneElement, forwardRef } from 'react';
 import * as ButtonGroupPrimitive from '@radix-ui/react-toggle-group';
 import { ButtonBase, IButton, IIconButton } from './button';

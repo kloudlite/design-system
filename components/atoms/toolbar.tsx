@@ -1,3 +1,5 @@
+'use client';
+
 /* eslint-disable react/jsx-pascal-case */
 import { composeEventHandlers } from '@radix-ui/primitive';
 import { createContextScope } from '@radix-ui/react-context';

@@ -1,3 +1,5 @@
+'use client';
+
 import { ChildrenProps } from '../types';
 
 export const SampleComponent = ({ children }: ChildrenProps) => {

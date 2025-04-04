@@ -1,3 +1,5 @@
+'use client';
+
 import * as RovingFocusGroup from '@radix-ui/react-roving-focus';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import React, {
