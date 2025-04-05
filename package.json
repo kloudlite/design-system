@@ -1,9 +1,9 @@
 {
-  "name": "kloudlite-design-system",
+  "name": "@kloudlite/design-system",
   "private": false,
   "type": "module",
   "description": "A design system for building ambitious products.",
-  "version": "0.0.55",
+  "version": "0.0.56-nightly",
   "keywords": [
     "UI",
     "Design system",
@@ -25,6 +25,11 @@
   "peerDependencies": {
     "react": "^18.2.0 || ^17.0.0 || ^16.0.0 || ^19.0.0",
     "react-dom": "^18.2.0 || ^17.0.0 || ^16.0.0 || ^19.0.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": ["react", "react-dom"]
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
@@ -86,7 +91,7 @@
     "@jengaicons/react": "1.6.0",
     "@mdx-js/react": "^2.3.0",
     "@monaco-editor/react": "^4.6.0",
-    "@radix-ui/primitive": "^1.1.1",
+    "@radix-ui/primitive": "^1.1.2-rc.8",
     "@radix-ui/react-alert-dialog": "1.0.4",
     "@radix-ui/react-checkbox": "^1.1.4",
     "@radix-ui/react-collection": "^1.1.2",

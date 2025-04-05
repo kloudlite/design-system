@@ -54,7 +54,7 @@ const getProdPackage = () => {
   const jsonResult = readDirectoryRecursively('', '.');
 
   const p = {
-    name: 'kloudlite-design-system',
+    name: '@kloudlite/design-system',
     private: prv,
     version,
     description,
